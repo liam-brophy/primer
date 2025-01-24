@@ -365,14 +365,14 @@
 
 @font-face {
   font-family: 'Gt Alpina Condensed';
-  src: url('../fonts/GT-Alpina-Condensed-Thin-Italic.woff') format('woff');
+  src: url('primer-site/fonts/GT-Alpina-Condensed-Thin-Italic.woff') format('woff');
   font-weight: 100;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: 'Gt Alpina Condensed';
-  src: url('../fonts/GT-Alpina-Condensed-Thin.woff') format('woff');
+  src: url('primer-site/fonts/GT-Alpina-Condensed-Thin.woff') format('woff');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
