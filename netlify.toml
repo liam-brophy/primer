@@ -1,0 +1,28 @@
+[build]
+  functions = "functions"
+  publish = "dist"
+  command = "npm run build"
+
+[dev]
+  functions = "functions"
+  publish = "dist"
+  framework = "vite"
+
+# Redirect for order confirmation page
+[[redirects]]
+  from = "/order-confirmation"
+  to = "/order-confirmation.html"
+  status = 200
+
+# Redirect for API routes
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# Environment variables should be set in the Netlify UI
+# Required variables:
+# MONGODB_URI
+# STRIPE_SECRET_KEY
+# STRIPE_WEBHOOK_SECRET
+# URL - Site URL

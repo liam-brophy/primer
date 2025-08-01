@@ -1,0 +1,142 @@
+.confirmation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: #f9f9f9;
+}
+
+.confirmation-card {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 2px solid #000;
+  text-align: center;
+}
+
+.confirmation-header {
+  margin-bottom: 2rem;
+}
+
+.confirmation-header h1 {
+  font-size: 1.8rem;
+  margin: 1rem 0;
+  color: #000;
+  font-weight: 600;
+}
+
+.confirmation-checkmark {
+  width: 70px;
+  height: 70px;
+  stroke-width: 2;
+  stroke: #4BB543;
+  stroke-miterlimit: 10;
+  margin-bottom: 1rem;
+}
+
+.checkmark-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark-check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.confirmation-number {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.confirmation-details {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.confirmation-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.confirmation-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.confirmation-item span:first-child {
+  color: #666;
+  font-weight: 400;
+}
+
+.confirmation-item span:last-child {
+  color: #000;
+  font-weight: 500;
+}
+
+.confirmation-status {
+  text-transform: uppercase;
+  color: #4BB543 !important;
+  font-weight: 600 !important;
+}
+
+.confirmation-message {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.confirmation-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: #000;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.confirmation-button:hover {
+  background: #222;
+}
+
+.confirmation-loader {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #000;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.confirmation-error {
+  color: #e74c3c;
+  margin-bottom: 2rem;
+}

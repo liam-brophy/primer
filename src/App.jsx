@@ -7,18 +7,25 @@ import LibraryPage from './pages/LibraryPage';
 import StoryReaderPage from './pages/StoryReaderPage';
 import AboutPage from './pages/AboutPage';
 import PreordersPage from './pages/PreordersPage';
+import OrderConfirmation from './pages/OrderConfirmation';
+import AdminDashboard from './pages/AdminDashboard';
 import ThemeToggleButton from './components/ThemeToggleButton';
 
 const AppContent = () => {
     const location = useLocation();
     const isPreordersPage = location.pathname === '/preorders';
+    const isOrderConfirmationPage = location.pathname === '/order-confirmation';
+    const isAdminPage = location.pathname === '/admin';
+    const isSpecialPage = isPreordersPage || isOrderConfirmationPage || isAdminPage;
 
     return (
         <>
             <Header />
-            {isPreordersPage ? (
+            {isSpecialPage ? (
                 <Routes>
                     <Route path="/preorders" element={<PreordersPage />} />
+                    <Route path="/order-confirmation" element={<OrderConfirmation />} />
+                    <Route path="/admin" element={<AdminDashboard />} />
                 </Routes>
             ) : (
                 <main className="main-content container">

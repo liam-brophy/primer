@@ -1,0 +1,107 @@
+{
+  "orders": {
+    "bsonType": "object",
+    "required": ["paymentIntentId", "customerInfo", "orderDetails", "status", "createdAt"],
+    "properties": {
+      "paymentIntentId": {
+        "bsonType": "string",
+        "description": "Stripe payment intent ID"
+      },
+      "customerInfo": {
+        "bsonType": "object",
+        "required": ["name", "email"],
+        "properties": {
+          "name": { "bsonType": "string" },
+          "email": { "bsonType": "string" },
+          "phone": { "bsonType": "string" },
+          "address": { "bsonType": "string" }
+        }
+      },
+      "orderDetails": {
+        "bsonType": "object",
+        "required": ["quantity", "amount", "total"],
+        "properties": {
+          "quantity": { "bsonType": "int" },
+          "amount": { "bsonType": "int" },
+          "shipping": { "bsonType": "int" },
+          "total": { "bsonType": "int" },
+          "isPickup": { "bsonType": "bool" },
+          "notes": { "bsonType": "string" },
+          "products": { 
+            "bsonType": "array",
+            "items": {
+              "bsonType": "object",
+              "required": ["productId", "name", "price", "quantity"],
+              "properties": {
+                "productId": { "bsonType": "string" },
+                "name": { "bsonType": "string" },
+                "price": { "bsonType": "int" },
+                "quantity": { "bsonType": "int" }
+              }
+            }
+          }
+        }
+      },
+      "status": {
+        "enum": ["pending", "processing", "shipped", "delivered", "cancelled"],
+        "description": "Order status"
+      },
+      "paymentStatus": {
+        "enum": ["pending", "paid", "failed", "refunded", "expired"],
+        "description": "Payment status"
+      },
+      "createdAt": { "bsonType": "date" },
+      "updatedAt": { "bsonType": "date" },
+      "paidAt": { "bsonType": "date" },
+      "shippedAt": { "bsonType": "date" },
+      "deliveredAt": { "bsonType": "date" }
+    }
+  },
+  "customers": {
+    "bsonType": "object",
+    "required": ["email", "name", "createdAt"],
+    "properties": {
+      "email": { "bsonType": "string" },
+      "name": { "bsonType": "string" },
+      "phone": { "bsonType": "string" },
+      "addresses": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "object",
+          "properties": {
+            "street": { "bsonType": "string" },
+            "city": { "bsonType": "string" },
+            "state": { "bsonType": "string" },
+            "zipCode": { "bsonType": "string" },
+            "country": { "bsonType": "string" },
+            "isDefault": { "bsonType": "bool" }
+          }
+        }
+      },
+      "orderHistory": {
+        "bsonType": "array",
+        "items": { "bsonType": "string" }
+      },
+      "createdAt": { "bsonType": "date" },
+      "updatedAt": { "bsonType": "date" }
+    }
+  },
+  "products": {
+    "bsonType": "object",
+    "required": ["name", "price", "createdAt"],
+    "properties": {
+      "name": { "bsonType": "string" },
+      "description": { "bsonType": "string" },
+      "price": { "bsonType": "int" },
+      "imageUrl": { "bsonType": "string" },
+      "inStock": { "bsonType": "bool" },
+      "isPreorder": { "bsonType": "bool" },
+      "categories": {
+        "bsonType": "array",
+        "items": { "bsonType": "string" }
+      },
+      "createdAt": { "bsonType": "date" },
+      "updatedAt": { "bsonType": "date" }
+    }
+  }
+}
