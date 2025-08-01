@@ -53,6 +53,14 @@ body.dark {
   --color-accent: #444444;     /* Dark gray for subtle accents */
 }
 
+/* Light Theme Variables (explicit for clarity) */
+body.light {
+  --color-background: #ffffff; /* White background */
+  --color-text: #000000;       /* Black text */
+  --color-border: #000000;     /* Black borders */
+  --color-accent: #cccccc;     /* Light gray for subtle accents */
+}
+
 /* Basic Reset & Body Styles */
 * {
   box-sizing: border-box;
@@ -68,12 +76,12 @@ body {
   font-family: var(--font-primary);
   background-color: var(--color-background);
   color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
   line-height: 1.5;
   font-size: 18px; /* Set base font size to 18px */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Consider adding if hyphenation is truly unwanted */
-  /* hyphens: none; */
 }
 
 /* Responsive font scaling */
@@ -134,13 +142,24 @@ img {
 }
 
 /* Style for the main content area between header/footer */
-.main-content {
-    min-height: calc(100vh - 150px); /* Adjust 150px based on Header/Footer height */
-    padding-top: calc(var(--base-spacing) * 2);
-    padding-bottom: calc(var(--base-spacing) * 2);
+/* App Container */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.header, .footer {
+/* Main Content Container */
+.main-content {
+  flex: 1;
+  padding: 1rem;
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}.header, .footer {
     background-color: var(--color-background);
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

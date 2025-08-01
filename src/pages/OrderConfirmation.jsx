@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './OrderConfirmation.css';
+import { useTheme } from '../context/ThemeContext';
 
 const OrderConfirmation = () => {
+    const { theme } = useTheme();
     const [orderDetails, setOrderDetails] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -68,7 +70,7 @@ const OrderConfirmation = () => {
     }
     
     return (
-        <div className="confirmation-container">
+        <div className={`confirmation-container ${theme}`}>
             <div className="confirmation-card">
                 <div className="confirmation-header">
                     <svg className="confirmation-checkmark" viewBox="0 0 52 52">

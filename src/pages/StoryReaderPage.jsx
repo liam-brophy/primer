@@ -2,8 +2,10 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import stories from '../data/stories';
 import './StoryReader.css';
+import { useTheme } from '../context/ThemeContext';
 
 const StoryReaderPage = () => {
+    const { theme } = useTheme();
     const { storyId } = useParams();
     const story = stories.find(story => story.id === storyId);
 
@@ -12,7 +14,7 @@ const StoryReaderPage = () => {
     }
 
     return (
-        <div className="story-reader-container">
+        <div className={`story-reader-container ${theme}`}>
             <div className="story-header">
                 <h1>{story.title}</h1>
                 <p className="story-meta">By {story.author}</p>

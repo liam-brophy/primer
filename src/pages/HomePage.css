@@ -1,0 +1,21 @@
+/* HomePage specific styles */
+.home-container {
+    min-height: calc(100vh - 200px); /* Adjust based on your header/footer height */
+    padding: 2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* We can keep these for more specific styling overrides if needed */
+.home-container.light {
+    color: var(--color-text);
+}
+
+.home-container.dark {
+    color: var(--color-text);
+}
+
+/* Additional styling for homepage paragraphs if needed */
+.home-container .paragraph {
+    color: var(--color-text);
+    transition: color 0.3s ease;
+}

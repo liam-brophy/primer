@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './AdminDashboard.css';
+import { useTheme } from '../context/ThemeContext';
 
 const AdminDashboard = () => {
+    const { theme } = useTheme();
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -66,7 +68,7 @@ const AdminDashboard = () => {
     
     if (!isAuthenticated) {
         return (
-            <div className="admin-container">
+            <div className={`admin-container ${theme}`}>
                 <div className="admin-card">
                     <h1>Admin Login</h1>
                     <form onSubmit={handleLogin}>
@@ -88,7 +90,7 @@ const AdminDashboard = () => {
     
     if (loading) {
         return (
-            <div className="admin-container">
+            <div className={`admin-container ${theme}`}>
                 <div className="admin-card">
                     <h1>Loading Orders...</h1>
                     <div className="admin-loader"></div>
@@ -99,7 +101,7 @@ const AdminDashboard = () => {
     
     if (error) {
         return (
-            <div className="admin-container">
+            <div className={`admin-container ${theme}`}>
                 <div className="admin-card">
                     <h1>Error</h1>
                     <p className="admin-error">{error}</p>
@@ -111,7 +113,7 @@ const AdminDashboard = () => {
     }
     
     return (
-        <div className="admin-container">
+        <div className={`admin-container ${theme}`}>
             <div className="admin-header">
                 <h1>Order Management</h1>
                 <button onClick={handleLogout} className="admin-button admin-button-secondary">Logout</button>

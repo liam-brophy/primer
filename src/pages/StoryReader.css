@@ -3,6 +3,15 @@
   max-width: 800px;
   margin: 2rem auto;
   padding: 2rem;
+  transition: color 0.3s ease;
+}
+
+.story-reader-container.light {
+  color: var(--color-text);
+}
+
+.story-reader-container.dark {
+  color: var(--color-text);
 }
 
 .story-header {
@@ -13,22 +22,40 @@
 .story-header h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  color: var(--color-text);
+  transition: color 0.3s ease;
+}
+
+.light .story-header h1 {
+  color: #000;
+}
+
+.dark .story-header h1 {
+  color: #fff;
 }
 
 .story-meta {
   font-style: italic;
   opacity: 0.8;
+  transition: opacity 0.3s ease;
 }
 
 .story-content {
   line-height: 1.8;
+  transition: color 0.3s ease;
+}
+
+.light .story-content {
+  color: #333;
+}
+
+.dark .story-content {
+  color: #eee;
 }
 
 .coming-soon-message {
   font-size: 1.5rem;
   text-align: center;
   padding: 3rem 0;
-  color: var(--text-primary);
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  transition: color 0.3s ease;
 }

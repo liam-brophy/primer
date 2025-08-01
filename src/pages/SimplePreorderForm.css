@@ -5,17 +5,35 @@
   align-items: center;
   min-height: 100vh;
   padding: 2rem;
-  background: #fff;
+  transition: color 0.3s ease;
+}
+
+.preorder-container.light {
+  color: var(--color-text);
+}
+
+.preorder-container.dark {
+  color: var(--color-text);
 }
 
 .preorder-card {
   width: 100%;
   max-width: 460px;
-  background: white;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   padding: 2rem;
   border-radius: 12px;
-  border: 2px solid #000;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.light .preorder-card {
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 2px solid var(--color-border);
+}
+
+.dark .preorder-card {
+  background: #2a2a2a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--color-border);
 }
 
 .preorder-header {
@@ -26,23 +44,67 @@
 .preorder-header h1 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  color: #000;
   font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.light .preorder-header h1 {
+  color: #000;
+}
+
+.dark .preorder-header h1 {
+  color: #fff;
+}
+.preorder-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.preorder-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.light .preorder-header h1 {
+  color: #000;
+}
+
+.dark .preorder-header h1 {
+  color: #fff;
+}
 }
 
 .preorder-title {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 0.5rem;
-  color: #000;
   font-weight: 600;
   letter-spacing: -0.5px;
+  transition: color 0.3s ease;
+}
+
+.light .preorder-title {
+  color: #000;
+}
+
+.dark .preorder-title {
+  color: #fff;
 }
 
 .preorder-header p {
   font-size: 0.95rem;
-  color: #555;
   margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.light .preorder-header p {
+  color: #555;
+}
+
+.dark .preorder-header p {
+  color: #aaa;
 }
 
 .preorder-price {
@@ -55,13 +117,29 @@
 .preorder-price-amount {
   font-size: 1.5rem;
   font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.light .preorder-price-amount {
   color: #000;
+}
+
+.dark .preorder-price-amount {
+  color: #fff;
 }
 
 .preorder-price-shipping {
   margin-left: 0.5rem;
-  color: #666;
   font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.light .preorder-price-shipping {
+  color: #666;
+}
+
+.dark .preorder-price-shipping {
+  color: #aaa;
 }
 
 .book-mockup-space {
@@ -89,8 +167,16 @@
   display: block;
   font-weight: 400;
   margin-bottom: 0.4rem;
-  color: #000;
   font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.light .preorder-form-field label {
+  color: #000;
+}
+
+.dark .preorder-form-field label {
+  color: #fff;
 }
 
 .preorder-form-field input,
@@ -98,42 +184,72 @@
 .preorder-form-field select {
   width: 100%;
   padding: 0.6rem;
-  border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 0.95rem;
+  transition: all 0.3s ease;
 }
 
-.preorder-form-field input:focus,
-.preorder-form-field textarea:focus,
-.preorder-form-field select:focus {
+.light .preorder-form-field input,
+.light .preorder-form-field textarea,
+.light .preorder-form-field select {
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #000;
+}
+
+.dark .preorder-form-field input,
+.dark .preorder-form-field textarea,
+.dark .preorder-form-field select {
+  border: 1px solid #555;
+  background-color: #333;
+  color: #fff;
+}
+
+.light .preorder-form-field input:focus,
+.light .preorder-form-field textarea:focus,
+.light .preorder-form-field select:focus {
   outline: none;
   border-color: #000;
+}
+
+.dark .preorder-form-field input:focus,
+.dark .preorder-form-field textarea:focus,
+.dark .preorder-form-field select:focus {
+  outline: none;
+  border-color: #fff;
 }
 
 .preorder-submit-button {
   width: 100%;
   padding: 0.7rem;
-  background: #000;
-  color: white;
-  border: none;
   border-radius: 4px;
   font-size: 0.95rem;
-  font-weight: 400;
   cursor: pointer;
-  margin-top: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  height: 44px; /* Set explicit height to match the back button */
+  transition: all 0.3s ease;
 }
 
-.preorder-submit-button:hover:not(:disabled) {
-  background: #222;
+.light .preorder-submit-button {
+  background: #000;
+  color: white;
+  border: 1px solid #000;
+}
+
+.dark .preorder-submit-button {
+  background: #fff;
+  color: #000;
+  border: 1px solid #fff;
+}
+
+.light .preorder-submit-button:hover {
+  background: #333;
+}
+
+.dark .preorder-submit-button:hover {
+  background: #ddd;
 }
 
 .preorder-submit-button:disabled {
-  background: #888;
+  opacity: 0.6;
   cursor: not-allowed;
 }
 

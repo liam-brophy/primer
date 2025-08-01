@@ -1,0 +1,120 @@
+/* AboutPage.css */
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px); /* Adjust based on your header/footer height */
+    padding: 2rem;
+    transition: color 0.3s ease;
+}
+
+.about-container.light {
+    color: var(--color-text);
+}
+
+.about-container.dark {
+    color: var(--color-text);
+}
+
+.about-content {
+    max-width: 550px; /* Narrower column */
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.about-header {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+    text-align: center;
+}
+
+.about-summary {
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+.about-summary p {
+    text-align: justify;
+    margin: 0;
+}
+
+.about-credits {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.credit-section {
+    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.credit-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px dotted var(--color-text-muted, #777);
+    z-index: 1;
+}
+
+.credit-section h3 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+    color: var(--color-text);
+    display: inline-block;
+    text-align: left;
+    background-color: inherit;
+    padding-right: 0.5rem;
+    z-index: 2;
+    position: relative;
+}
+
+.credit-section p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    display: inline-block;
+    text-align: right;
+    background-color: inherit;
+    padding-left: 0.5rem;
+    z-index: 2;
+    position: relative;
+}
+
+.about-container.light .credit-section h3,
+.about-container.light .credit-section p {
+    background-color: var(--color-background, #fff);
+}
+
+.about-container.dark .credit-section h3,
+.about-container.dark .credit-section p {
+    background-color: var(--color-background, #111);
+}
+@media (min-width: 768px) {
+    .about-credits {
+        width: 100%;
+        gap: 1.5rem;
+    }
+    
+    .credit-section {
+        margin-bottom: 0;
+    }
+}

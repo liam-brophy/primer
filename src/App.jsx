@@ -10,16 +10,18 @@ import PreordersPage from './pages/PreordersPage';
 import OrderConfirmation from './pages/OrderConfirmation';
 import AdminDashboard from './pages/AdminDashboard';
 import ThemeToggleButton from './components/ThemeToggleButton';
+import { useTheme } from './context/ThemeContext';
 
 const AppContent = () => {
     const location = useLocation();
+    const { theme } = useTheme();
     const isPreordersPage = location.pathname === '/preorders';
     const isOrderConfirmationPage = location.pathname === '/order-confirmation';
     const isAdminPage = location.pathname === '/admin';
     const isSpecialPage = isPreordersPage || isOrderConfirmationPage || isAdminPage;
 
     return (
-        <>
+        <div className={`app-wrapper ${theme}`}>
             <Header />
             {isSpecialPage ? (
                 <Routes>
@@ -39,7 +41,7 @@ const AppContent = () => {
             )}
             <Footer />
             <ThemeToggleButton />
-        </>
+        </div>
     );
 };
 

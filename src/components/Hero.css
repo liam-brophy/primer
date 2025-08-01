@@ -1,0 +1,35 @@
+/* Hero component styles */
+.hero-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    transition: color 0.3s ease;
+    /* Remove explicit background colors to inherit from body */
+}
+
+.hero-section.light {
+    color: var(--color-text);
+}
+
+.hero-section.dark {
+    color: var(--color-text);
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-tagline {
+    font-size: 2.2rem;
+    line-height: 1.4;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+.hero-tagline.light {
+    color: #000;
+}
+
+.hero-tagline.dark {
+    color: #fff;
+}

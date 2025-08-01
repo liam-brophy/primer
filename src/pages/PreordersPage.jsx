@@ -4,18 +4,20 @@ import { useForm } from 'react-hook-form';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import './SimplePreorderForm.css';
+import { useTheme } from '../context/ThemeContext';
 
 // Initialize Stripe with your publishable key
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
 
 // Separate component for the form with Stripe elements
 const PreorderForm = () => {
+    const { theme } = useTheme();
     const [isPickup, setIsPickup] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [paymentError, setPaymentError] = useState(null);
     const [clientSecret, setClientSecret] = useState('');
-    // Set isPaymentStep to true initially to see the payment form immediately
-    const [isPaymentStep, setIsPaymentStep] = useState(true);
+    // Set isPaymentStep to false initially to start with the customer info form
+    const [isPaymentStep, setIsPaymentStep] = useState(false);
     const [orderSummary, setOrderSummary] = useState({
         quantity: 1,
         subtotal: 23.99,
@@ -186,7 +188,7 @@ ${formData.country === 'US' ? 'United States' :
     };
 
     return (
-        <div className="preorder-container">
+        <div className={`preorder-container ${theme}`}>
             <div className="preorder-card">
                 <div className="preorder-header">
                     <h1 className="preorder-title">Preorder Volume One</h1>

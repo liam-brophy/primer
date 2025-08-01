@@ -1,10 +1,14 @@
 import React from 'react';
 import '../styles/global.css'; // Make sure styles are imported
+import './HomePage.css'; // Import HomePage specific styles
 import Hero from '../components/Hero';
+import { useTheme } from '../context/ThemeContext';
 
 const HomePage = () => {
+    const { theme } = useTheme();
+    
     return (
-        <>
+        <div className={`home-container ${theme}`}>
             <Hero />
             <div className="grid-container">
                 <div className="col-12">
@@ -33,7 +37,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
