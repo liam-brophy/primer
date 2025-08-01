@@ -14,7 +14,8 @@
   background: white;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 12px;
+  border: 2px solid #000;
 }
 
 .preorder-header {
@@ -27,6 +28,15 @@
   margin-bottom: 0.5rem;
   color: #000;
   font-weight: 500;
+}
+
+.preorder-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #000;
+  font-weight: 600;
+  letter-spacing: -0.5px;
 }
 
 .preorder-header p {
@@ -52,6 +62,23 @@
   margin-left: 0.5rem;
   color: #666;
   font-size: 0.9rem;
+}
+
+.book-mockup-space {
+  width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-mockup-image {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .preorder-form-field {
@@ -98,6 +125,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  height: 44px; /* Set explicit height to match the back button */
 }
 
 .preorder-submit-button:hover:not(:disabled) {
@@ -164,4 +192,121 @@
   padding: 0.15rem 0.4rem;
   border-radius: 3px;
   font-size: 0.75rem;
+}
+
+/* Payment step styles */
+.payment-step {
+  margin-top: 1rem;
+}
+
+.order-summary {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.order-summary h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #000;
+  font-weight: 500;
+}
+
+.summary-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  padding: 0.3rem 0;
+}
+
+.summary-row.total {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #ddd;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.payment-form h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #000;
+  font-weight: 500;
+}
+
+.card-element-container {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.payment-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  align-items: stretch; /* Changed to stretch to ensure equal height */
+}
+
+/* Override the shared styles specifically for the payment buttons */
+.payment-buttons .back-button,
+.payment-buttons .preorder-submit-button {
+  margin-top: 0; /* Remove margin-top from the submit button in payment buttons */
+  padding: 0.7rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  cursor: pointer;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 0; /* Allow buttons to grow from 0 base size */
+}
+
+.payment-buttons .back-button {
+  background: white;
+  color: #000;
+  border: 1px solid #000;
+  flex-grow: 0.4; /* Take up 40% of available space */
+}
+
+.payment-buttons .preorder-submit-button {
+  flex-grow: 0.6; /* Take up 60% of available space */
+  background: #000;
+  color: white;
+  border: none;
+}
+
+.back-button:hover:not(:disabled) {
+  background: #f5f5f5;
+}
+
+.back-button:disabled {
+  border-color: #ccc;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.payment-error {
+  background-color: #fff0f0;
+  border: 1px solid #ffcaca;
+  color: #d32f2f;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
 }
