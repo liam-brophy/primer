@@ -1,0 +1,167 @@
+/* Simple, clean form styling */
+.preorder-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: #fff;
+}
+
+.preorder-card {
+  width: 100%;
+  max-width: 460px;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.preorder-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.preorder-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+  font-weight: 500;
+}
+
+.preorder-header p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.preorder-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.preorder-price-amount {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.preorder-price-shipping {
+  margin-left: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.preorder-form-field {
+  margin-bottom: 1rem;
+}
+
+.preorder-form-field label {
+  display: block;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+.preorder-form-field input,
+.preorder-form-field textarea,
+.preorder-form-field select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.preorder-form-field input:focus,
+.preorder-form-field textarea:focus,
+.preorder-form-field select:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.preorder-submit-button {
+  width: 100%;
+  padding: 0.7rem;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  cursor: pointer;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.preorder-submit-button:hover:not(:disabled) {
+  background: #222;
+}
+
+.preorder-submit-button:disabled {
+  background: #888;
+  cursor: not-allowed;
+}
+
+.preorder-spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: preorder-spin 1s linear infinite;
+}
+
+@keyframes preorder-spin {
+  to { transform: rotate(360deg); }
+}
+
+.preorder-notice {
+  margin-top: 1.5rem;
+  color: #555;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.preorder-book-details {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.preorder-book-details h3 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: #000;
+  font-weight: 500;
+}
+
+.preorder-detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  font-size: 0.85rem;
+}
+
+.preorder-detail-label {
+  color: #555;
+}
+
+.preorder-detail-value {
+  font-weight: 400;
+  color: #000;
+}
+
+.preorder-badge {
+  background: #000;
+  color: white;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+}

@@ -232,10 +232,13 @@ img {
 }
 
 .main-nav a {
+    font-family: 'GT Alpina Condensed Thin', sans-serif; /* Explicitly set the font */
     text-decoration: none;
     color: var(--color-text);
     padding: calc(var(--base-spacing) / 2) 0; /* Add some padding */
     position: relative; /* For potential hover effects */
+    font-size: 1.2rem; /* Slightly larger font size for nav items */
+    letter-spacing: 0.03em; /* Subtle letter spacing */
 }
 
 /* Responsive Styles for Mobile Menu */
@@ -276,8 +279,10 @@ img {
     }
 
     .main-nav a {
+        font-family: 'GT Alpina Condensed Thin', sans-serif; /* Keep font consistent */
         display: block; /* Make links take full width */
         padding: var(--base-spacing);
+        font-size: 1.3rem; /* Slightly larger on mobile for better touch targets */
     }
 }
 

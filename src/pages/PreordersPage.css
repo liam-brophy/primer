@@ -1,0 +1,285 @@
+/* Clean, modern preorder page styles */
+.preorder-page {
+    min-height: calc(100vh - 150px) !important;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
+    padding: 3rem 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.preorder-container {
+    max-width: 1000px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
+}
+
+.preorder-header {
+    text-align: center !important;
+    margin-bottom: 3rem !important;
+}
+
+.preorder-header h1 {
+    font-size: 3rem !important;
+    font-weight: 700 !important;
+    color: #1a202c !important;
+    margin-bottom: 1rem !important;
+    letter-spacing: -0.025em !important;
+}
+
+.preorder-header p {
+    font-size: 1.25rem !important;
+    color: #64748b !important;
+    margin-bottom: 2rem !important;
+    font-weight: 400 !important;
+}
+
+.price {
+    display: flex !important;
+    align-items: baseline !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+}
+
+.price .amount {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    color: #3b82f6 !important;
+}
+
+.price .shipping {
+    font-size: 1.125rem !important;
+    color: #64748b !important;
+}
+
+.form-wrapper {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr !important;
+    gap: 3rem !important;
+    align-items: start !important;
+}
+
+.form-section {
+    background: white !important;
+    border-radius: 1rem !important;
+    padding: 2.5rem !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+.form-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.5rem !important;
+    margin-bottom: 2rem !important;
+}
+
+.form-group {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1 !important;
+}
+
+.form-group label {
+    font-weight: 600 !important;
+    color: #374151 !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 0.875rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+.optional {
+    font-weight: 400 !important;
+    color: #9ca3af !important;
+    text-transform: lowercase !important;
+    letter-spacing: normal !important;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 0.75rem 1rem !important;
+    border: 2px solid #e5e7eb !important;
+    border-radius: 0.5rem !important;
+    font-size: 1rem !important;
+    transition: all 0.2s ease !important;
+    background: white !important;
+    font-family: inherit !important;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none !important;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+.form-group textarea {
+    resize: vertical !important;
+    min-height: 100px !important;
+}
+
+.submit-button {
+    width: 100% !important;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+    color: white !important;
+    border: none !important;
+    padding: 1rem 2rem !important;
+    border-radius: 0.5rem !important;
+    font-size: 1.125rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.submit-button:hover:not(:disabled) {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.25) !important;
+}
+
+.submit-button:disabled {
+    opacity: 0.7 !important;
+    cursor: not-allowed !important;
+}
+
+.spinner {
+    width: 16px !important;
+    height: 16px !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 50% !important;
+    border-top-color: white !important;
+    animation: spin 1s ease-in-out infinite !important;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.form-notice {
+    background: #eff6ff !important;
+    border: 1px solid #dbeafe !important;
+    border-radius: 0.5rem !important;
+    padding: 1rem !important;
+    text-align: center !important;
+    color: #1e40af !important;
+    font-size: 0.875rem !important;
+}
+
+.info-section {
+    background: white !important;
+    border-radius: 1rem !important;
+    padding: 2rem !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+    border: 1px solid #e2e8f0 !important;
+    height: fit-content !important;
+}
+
+.info-section h3 {
+    color: #1a202c !important;
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 1.5rem !important;
+    padding-bottom: 0.75rem !important;
+    border-bottom: 2px solid #e5e7eb !important;
+}
+
+.detail-item {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0.75rem 0 !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+}
+
+.detail-item:last-child {
+    border-bottom: none !important;
+}
+
+.detail-item span:first-child {
+    color: #6b7280 !important;
+    font-weight: 500 !important;
+}
+
+.detail-item span:last-child {
+    color: #1f2937 !important;
+    font-weight: 600 !important;
+}
+
+.badge {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+    color: white !important;
+    padding: 0.25rem 0.75rem !important;
+    border-radius: 9999px !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .form-wrapper {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .preorder-header h1 {
+        font-size: 2.5rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .preorder-page {
+        padding: 1rem 0 !important;
+    }
+    
+    .form-section,
+    .info-section {
+        padding: 1.5rem !important;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    .preorder-header h1 {
+        font-size: 2rem !important;
+    }
+    
+    .preorder-header p {
+        font-size: 1.125rem !important;
+    }
+    
+    .price .amount {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .preorder-container {
+        padding: 0 0.5rem !important;
+    }
+    
+    .form-section,
+    .info-section {
+        padding: 1rem !important;
+    }
+    
+    .preorder-header {
+        margin-bottom: 2rem !important;
+    }
+}

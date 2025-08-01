@@ -20,11 +20,13 @@ const AccordionItem = ({ story, isOpen, toggleAccordion }) => {
             </div>
             {isOpen && (
                 <div className="accordion-content">
-                    <p className="story-meta">By {story.author} • {story.date}</p>
-                    <p className="story-excerpt">{story.content.substring(0, 150)}...</p>
+                    <p className="story-meta">By {story.author}</p>
+                    <p className="story-excerpt">Full story available on August 8th</p>
+                    {/* Temporarily commented out
                     <Link to={`/story/${story.id}`} className="read-more-link">
                         Read Full Story
                     </Link>
+                    */}
                 </div>
             )}
         </div>

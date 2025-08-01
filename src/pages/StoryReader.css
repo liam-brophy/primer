@@ -1,0 +1,34 @@
+/* StoryReader page styles */
+.story-reader-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.story-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.story-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.story-meta {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.story-content {
+  line-height: 1.8;
+}
+
+.coming-soon-message {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--text-primary);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
