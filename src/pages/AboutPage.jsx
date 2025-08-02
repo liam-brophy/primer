@@ -13,7 +13,7 @@ const AboutPage = () => {
                 
                 <div className="about-summary">
                     <p>
-                        Primer is an independent literary journal showcasing emerging voices in fiction, poetry, and creative non-fiction.
+                        Primer is an independent literary journal showcasing emerging voices in fiction and creative non-fiction.
                         Our inaugural volume brings together a diverse collection of works that explore the human experience through fresh perspectives and innovative storytelling.
                     </p>
                 </div>
