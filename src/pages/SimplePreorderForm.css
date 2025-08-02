@@ -428,30 +428,38 @@
 
 /* Payment Success Styles */
 .payment-success {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
   text-align: center;
-  padding: 2rem 0;
-}
-
-.success-icon {
-  font-size: 4rem;
-  margin-bottom: 1rem;
 }
 
 .payment-success h2 {
-  color: #2e7d32;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.75rem;
   font-weight: 600;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.dark .payment-success h2 {
+  color: #fff;
 }
 
 .payment-success > p {
-  font-size: 1.1rem;
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
   margin-bottom: 2rem;
-  opacity: 0.8;
+}
+
+.dark .payment-success > p {
+  color: #ccc;
 }
 
 .order-details {
-  background: #f8f9fa;
+  background: #fafafa;
   border-radius: 8px;
   padding: 1.5rem;
   margin: 2rem 0;
@@ -464,18 +472,25 @@
 }
 
 .order-details h3 {
-  font-size: 1.1rem;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000;
   margin-bottom: 1rem;
-  color: #2e7d32;
   text-align: center;
+}
+
+.dark .order-details h3 {
+  color: #fff;
 }
 
 .detail-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #e0e0e0;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .dark .detail-row {
@@ -484,33 +499,52 @@
 
 .detail-row:last-child {
   border-bottom: none;
+  font-weight: 600;
+  color: #e91e63;
 }
 
 .detail-row span:first-child {
-  font-weight: 500;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.dark .detail-row span:first-child {
+  color: #ccc;
 }
 
 .detail-row span:last-child {
+  color: #000;
+  font-size: 0.95rem;
+  font-weight: 500;
   font-family: 'Courier New', monospace;
-  font-size: 0.9rem;
+}
+
+.dark .detail-row span:last-child {
+  color: #fff;
 }
 
 .success-message {
-  background: #e8f5e8;
-  border-left: 4px solid #2e7d32;
+  background: #fafafa;
+  border-left: 4px solid #e91e63;
   padding: 1rem;
   margin: 2rem 0;
   border-radius: 4px;
 }
 
 .dark .success-message {
-  background: #1a2e1a;
-  border-left-color: #4caf50;
+  background: #1a1a1a;
+  border-left-color: #e91e63;
 }
 
 .success-message p {
   margin: 0.5rem 0;
   font-size: 0.95rem;
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #666;
+}
+
+.dark .success-message p {
+  color: #ccc;
 }
 
 .success-actions {
@@ -521,30 +555,32 @@
 }
 
 .library-button, .home-button {
-  padding: 0.8rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 6px;
-  font-size: 1rem;
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.95rem;
   font-weight: 500;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  border: none;
+  display: inline-block;
 }
 
 .library-button {
-  background: #2e7d32;
+  background: #e91e63;
   color: white;
 }
 
 .library-button:hover {
-  background: #1b5e20;
+  background: #c2185b;
   transform: translateY(-1px);
 }
 
 .home-button {
   background: transparent;
   color: var(--color-text);
-  border-color: var(--color-border);
+  border: 1px solid var(--color-border);
 }
 
 .home-button:hover {
@@ -553,6 +589,11 @@
 }
 
 @media (max-width: 600px) {
+  .payment-success {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
   .success-actions {
     flex-direction: column;
   }

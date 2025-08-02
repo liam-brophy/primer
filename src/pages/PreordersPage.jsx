@@ -230,33 +230,35 @@ ${formData.country === 'US' ? 'United States' :
                 {paymentSuccess ? (
                     // Payment Success Confirmation
                     <div className="payment-success">
-                        <div className="success-icon">✅</div>
-                        <h2>Order Confirmed!</h2>
-                        <p>Thank you for your preorder, {successDetails.customerName}!</p>
+                        <h2>Order Confirmed</h2>
+                        <p>Thank you for your preorder, {successDetails.customerName}. You'll receive a confirmation email shortly with your order details and updates on shipping.</p>
                         
                         <div className="order-details">
                             <h3>Order Summary</h3>
                             <div className="detail-row">
-                                <span>Quantity:</span>
-                                <span>{successDetails.quantity} copy{successDetails.quantity > 1 ? 'ies' : ''}</span>
+                                <span>Customer</span>
+                                <span>{successDetails.customerName}</span>
                             </div>
                             <div className="detail-row">
-                                <span>Total Paid:</span>
-                                <span>${successDetails.amount}</span>
-                            </div>
-                            <div className="detail-row">
-                                <span>Email:</span>
+                                <span>Email</span>
                                 <span>{successDetails.customerEmail}</span>
                             </div>
                             <div className="detail-row">
-                                <span>Order ID:</span>
+                                <span>Quantity</span>
+                                <span>{successDetails.quantity} copy{successDetails.quantity > 1 ? 'ies' : ''}</span>
+                            </div>
+                            <div className="detail-row">
+                                <span>Total Paid</span>
+                                <span>${successDetails.amount}</span>
+                            </div>
+                            <div className="detail-row">
+                                <span>Order ID</span>
                                 <span>{successDetails.paymentIntentId}</span>
                             </div>
                         </div>
 
                         <div className="success-message">
-                            <p>You'll receive a confirmation email shortly with your order details.</p>
-                            <p>We'll notify you when Primer Volume One is ready to ship!</p>
+                            <p>We'll notify you when Primer Volume One is ready to ship.</p>
                         </div>
 
                         <div className="success-actions">
