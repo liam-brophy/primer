@@ -24,6 +24,8 @@ const PreorderForm = () => {
         shipping: 0,
         total: 23.99
     });
+    const [paymentSuccess, setPaymentSuccess] = useState(false);
+    const [successDetails, setSuccessDetails] = useState(null);
     
     // Stripe hooks
     const stripe = useStripe();
@@ -164,8 +166,15 @@ ${formData.country === 'US' ? 'United States' :
             if (error) {
                 throw new Error(error.message);
             } else if (paymentIntent.status === 'succeeded') {
-                // Payment successful, redirect to confirmation page
-                window.location.href = `/order-confirmation?payment_intent=${paymentIntent.id}`;
+                // Payment successful, show confirmation
+                setSuccessDetails({
+                    paymentIntentId: paymentIntent.id,
+                    customerName: formData.name,
+                    customerEmail: formData.email,
+                    amount: (paymentIntent.amount / 100).toFixed(2),
+                    quantity: formData.quantity
+                });
+                setPaymentSuccess(true);
             }
         } catch (error) {
             console.error('Payment error:', error);
@@ -218,7 +227,54 @@ ${formData.country === 'US' ? 'United States' :
                     </div>
                 </div>
 
-                {!isPaymentStep ? (
+                {paymentSuccess ? (
+                    // Payment Success Confirmation
+                    <div className="payment-success">
+                        <div className="success-icon">✅</div>
+                        <h2>Order Confirmed!</h2>
+                        <p>Thank you for your preorder, {successDetails.customerName}!</p>
+                        
+                        <div className="order-details">
+                            <h3>Order Summary</h3>
+                            <div className="detail-row">
+                                <span>Quantity:</span>
+                                <span>{successDetails.quantity} copy{successDetails.quantity > 1 ? 'ies' : ''}</span>
+                            </div>
+                            <div className="detail-row">
+                                <span>Total Paid:</span>
+                                <span>${successDetails.amount}</span>
+                            </div>
+                            <div className="detail-row">
+                                <span>Email:</span>
+                                <span>{successDetails.customerEmail}</span>
+                            </div>
+                            <div className="detail-row">
+                                <span>Order ID:</span>
+                                <span>{successDetails.paymentIntentId}</span>
+                            </div>
+                        </div>
+
+                        <div className="success-message">
+                            <p>You'll receive a confirmation email shortly with your order details.</p>
+                            <p>We'll notify you when Primer Volume One is ready to ship!</p>
+                        </div>
+
+                        <div className="success-actions">
+                            <button 
+                                className="library-button"
+                                onClick={() => window.location.href = '/library'}
+                            >
+                                Browse Library
+                            </button>
+                            <button 
+                                className="home-button"
+                                onClick={() => window.location.href = '/'}
+                            >
+                                Back to Home
+                            </button>
+                        </div>
+                    </div>
+                ) : !isPaymentStep ? (
                     // Step 1: Customer Information Form
                     <form 
                         name="preorders" 

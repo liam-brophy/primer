@@ -74,7 +74,6 @@
 .dark .preorder-header h1 {
   color: #fff;
 }
-}
 
 .preorder-title {
   font-size: 2rem;
@@ -425,4 +424,140 @@
   color: #d32f2f;
   font-size: 0.8rem;
   margin-top: 0.3rem;
+}
+
+/* Payment Success Styles */
+.payment-success {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.success-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.payment-success h2 {
+  color: #2e7d32;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.payment-success > p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.order-details {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.dark .order-details {
+  background: #1a1a1a;
+  border: 1px solid var(--color-border);
+}
+
+.order-details h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #2e7d32;
+  text-align: center;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.dark .detail-row {
+  border-bottom-color: var(--color-border);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row span:first-child {
+  font-weight: 500;
+}
+
+.detail-row span:last-child {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+.success-message {
+  background: #e8f5e8;
+  border-left: 4px solid #2e7d32;
+  padding: 1rem;
+  margin: 2rem 0;
+  border-radius: 4px;
+}
+
+.dark .success-message {
+  background: #1a2e1a;
+  border-left-color: #4caf50;
+}
+
+.success-message p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.success-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.library-button, .home-button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.library-button {
+  background: #2e7d32;
+  color: white;
+}
+
+.library-button:hover {
+  background: #1b5e20;
+  transform: translateY(-1px);
+}
+
+.home-button {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.home-button:hover {
+  background: var(--color-border);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .success-actions {
+    flex-direction: column;
+  }
+  
+  .library-button, .home-button {
+    width: 100%;
+  }
 }
