@@ -338,62 +338,6 @@ img {
   transform: scale(1.1);
 }
 
-/* Theme Toggle Icons */
-.theme-icon {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  position: relative;
-}
-
-/* Sun icon for light mode (when in dark theme, show sun to switch to light) */
-.light-icon::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  background-color: var(--color-text);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.light-icon::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 16px;
-  height: 16px;
-  border: 2px solid transparent;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 
-    0 -6px 0 -4px var(--color-text),
-    4.5px -4.5px 0 -4px var(--color-text),
-    6px 0 0 -4px var(--color-text),
-    4.5px 4.5px 0 -4px var(--color-text),
-    0 6px 0 -4px var(--color-text),
-    -4.5px 4.5px 0 -4px var(--color-text),
-    -6px 0 0 -4px var(--color-text),
-    -4.5px -4.5px 0 -4px var(--color-text);
-}
-
-/* Moon icon for dark mode (when in light theme, show moon to switch to dark) */
-.dark-icon::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 14px;
-  height: 14px;
-  background-color: var(--color-text);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: inset 3px -1px 0 var(--color-background);
-}
-
 /* Callout Paragraph Styles */
 .paragraph.center.calloutcenter {
     border-top: 1px solid #fff;
