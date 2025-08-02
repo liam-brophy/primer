@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import './SimplePreorderForm.css';
@@ -12,6 +13,7 @@ const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
 // Separate component for the form with Stripe elements
 const PreorderForm = () => {
     const { theme } = useTheme();
+    const navigate = useNavigate();
     const [isPickup, setIsPickup] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [paymentError, setPaymentError] = useState(null);
@@ -264,13 +266,13 @@ ${formData.country === 'US' ? 'United States' :
                         <div className="success-actions">
                             <button 
                                 className="library-button"
-                                onClick={() => window.location.href = '/library'}
+                                onClick={() => navigate('/library')}
                             >
                                 Browse Library
                             </button>
                             <button 
                                 className="home-button"
-                                onClick={() => window.location.href = '/'}
+                                onClick={() => navigate('/')}
                             >
                                 Back to Home
                             </button>
