@@ -8,17 +8,38 @@ const dbName = 'primerdb';
 const ordersCollection = 'orders';
 
 exports.handler = async (event, context) => {
+  // Enable CORS
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'GET, OPTIONS'
+  };
+
+  // Handle preflight requests
+  if (event.httpMethod === 'OPTIONS') {
+    return {
+      statusCode: 200,
+      headers,
+      body: ''
+    };
+  }
+
   // This function is called when a payment is completed
   // It updates the order status in MongoDB and sends a confirmation email
   
   if (event.httpMethod !== 'GET') {
-    return { statusCode: 405, body: JSON.stringify({ error: 'Method not allowed' }) };
+    return { 
+      statusCode: 405, 
+      headers,
+      body: JSON.stringify({ error: 'Method not allowed' }) 
+    };
   }
 
   const params = event.queryStringParameters;
   if (!params || !params.payment_intent) {
     return {
       statusCode: 400,
+      headers,
       body: JSON.stringify({ error: 'Missing payment intent ID' })
     };
   }

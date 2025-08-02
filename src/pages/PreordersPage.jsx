@@ -88,11 +88,21 @@ ${formData.country === 'US' ? 'United States' :
                 body: JSON.stringify(submissionData)
             });
             
-            const result = await response.json();
-            
+            // Check if the response is OK before trying to parse JSON
             if (!response.ok) {
-                throw new Error(result.error || 'Error processing your order');
+                // Try to get error message from response
+                let errorMessage = 'Error processing your order';
+                try {
+                    const errorResult = await response.json();
+                    errorMessage = errorResult.error || errorMessage;
+                } catch (jsonError) {
+                    // If JSON parsing fails, use the status text
+                    errorMessage = `Server error (${response.status}): ${response.statusText}`;
+                }
+                throw new Error(errorMessage);
             }
+            
+            const result = await response.json();
             
             console.log('Payment intent created:', result);
             

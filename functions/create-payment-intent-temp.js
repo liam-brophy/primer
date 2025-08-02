@@ -1,11 +1,5 @@
-// Functions to create a Stripe payment intent
+// Temporary version without MongoDB for testing
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-const { MongoClient } = require('mongodb');
-
-// MongoDB connection
-const client = new MongoClient(process.env.MONGODB_URI);
-const dbName = 'primerdb';
-const ordersCollection = 'orders';
 
 exports.handler = async (event, context) => {
   // Enable CORS
@@ -37,10 +31,6 @@ exports.handler = async (event, context) => {
     // Check for required environment variables
     if (!process.env.STRIPE_SECRET_KEY) {
       throw new Error('Stripe secret key is not configured');
-    }
-    
-    if (!process.env.MONGODB_URI) {
-      throw new Error('MongoDB URI is not configured');
     }
 
     // Parse the incoming JSON
@@ -84,46 +74,11 @@ exports.handler = async (event, context) => {
       }
     });
 
-    // TODO: Temporarily skip MongoDB due to connection issues
-    // Store preliminary order in MongoDB
-    /*
-    await client.connect();
-    const db = client.db(dbName);
-    const collection = db.collection(ordersCollection);
+    console.log('Payment intent created successfully:', paymentIntent.id);
     
-    const orderRecord = {
-      paymentIntentId: paymentIntent.id,
-      customerInfo: {
-        name: data.name,
-        email: data.email,
-        phone: data.phone || '',
-        address: data.formattedAddress || 'In-store pickup',
-      },
-      orderDetails: {
-        quantity: quantity,
-        amount: amount,
-        shipping: shipping,
-        total: amount + shipping,
-        isPickup: data.isPickup,
-        notes: data.notes || '',
-        products: [{
-          productId: 'primer-volume-one',
-          name: 'Primer - Volume One',
-          price: unitPrice,
-          quantity: quantity
-        }]
-      },
-      status: 'pending',
-      paymentStatus: 'pending',
-      createdAt: new Date(),
-      updatedAt: new Date()
-    };
-    
-    await collection.insertOne(orderRecord);
-    */
-
-    // For now, log the order details and use a temporary order ID
-    console.log('Order details (MongoDB connection issue, not stored in DB):', {
+    // TODO: Store order in MongoDB when connection is fixed
+    // For now, just log the order details
+    console.log('Order details (not stored in DB yet):', {
       paymentIntentId: paymentIntent.id,
       customerInfo: {
         name: data.name,
@@ -149,7 +104,7 @@ exports.handler = async (event, context) => {
         clientSecret: paymentIntent.client_secret,
         amount: amount,
         shipping: shipping,
-        orderId: 'temp-' + paymentIntent.id // temporary order ID until MongoDB is fixed
+        orderId: 'temp-' + paymentIntent.id // temporary order ID
       })
     };
 
@@ -161,11 +116,4 @@ exports.handler = async (event, context) => {
       body: JSON.stringify({ error: error.message })
     };
   }
-  // Note: MongoDB connection temporarily commented out due to connection issues
-  // finally {
-  //   // Close the MongoDB connection
-  //   if (client) {
-  //     await client.close();
-  //   }
-  // }
 };
