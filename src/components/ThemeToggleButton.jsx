@@ -12,7 +12,7 @@ const ThemeToggleButton = () => {
         title={theme === 'dark' ? "Switch to light mode" : "Switch to dark mode"}
         className="theme-toggle-button"
       >
-        {theme === 'dark' ? '💡' : '🌙'}
+        <span className={`theme-icon ${theme === 'dark' ? 'light-icon' : 'dark-icon'}`}></span>
       </button>
     </div>
   );
