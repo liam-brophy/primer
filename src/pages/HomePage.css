@@ -19,3 +19,45 @@
     color: var(--color-text);
     transition: color 0.3s ease;
 }
+
+/* Mobile-specific homepage adjustments */
+@media (max-width: 768px) {
+    .home-container {
+        padding: 1rem;
+        min-height: calc(100vh - 150px);
+    }
+    
+    /* Ensure text is readable on mobile */
+    .home-container .paragraph {
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 1rem 0;
+        padding: 1rem;
+    }
+    
+    /* Special handling for the callout section on mobile */
+    .home-container .paragraph.center.calloutcenter {
+        margin: 2rem 0;
+        padding: 1.5rem 1rem;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-container {
+        padding: 0.5rem;
+    }
+    
+    .home-container .paragraph {
+        font-size: 15px;
+        margin: 0.5rem 0;
+        padding: 0.75rem;
+    }
+    
+    .home-container .paragraph.center.calloutcenter {
+        margin: 1.5rem 0;
+        padding: 1rem 0.75rem;
+        font-size: 15px;
+    }
+}

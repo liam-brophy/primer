@@ -568,6 +568,13 @@ body:not(.dark) .paragraph.center.calloutcenter {
 }
 
 @media (max-width: 768px) {
+  /* Force all columns to full width on mobile unless explicitly overridden */
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6,
+  .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 { 
+    grid-column: span 12; 
+  }
+  
+  /* Keep specific mobile classes working for fine control */
   .col-sm-1 { grid-column: span 1; }
   .col-sm-2 { grid-column: span 2; }
   .col-sm-3 { grid-column: span 3; }
@@ -580,6 +587,35 @@ body:not(.dark) .paragraph.center.calloutcenter {
   .col-sm-10 { grid-column: span 10; }
   .col-sm-11 { grid-column: span 11; }
   .col-sm-12 { grid-column: span 12; }
+  
+  /* Reduce grid gap on mobile */
+  .grid-container {
+    gap: calc(var(--grid-gap) / 2);
+    padding: 0 calc(var(--base-spacing) / 2);
+  }
+}
+
+/* Mobile-specific adjustments for smaller screens */
+@media (max-width: 480px) {
+  .grid-container {
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  
+  /* Ensure paragraphs have proper spacing on very small screens */
+  .paragraph {
+    margin: 1rem 0;
+    padding: 1rem;
+    font-size: 16px; /* Slightly smaller on very small screens */
+    line-height: 1.6;
+  }
+  
+  /* Callout paragraphs need special handling on mobile */
+  .paragraph.center.calloutcenter {
+    margin: 2rem 1rem;
+    padding: 1.5rem 1rem;
+    font-size: 16px;
+  }
 }
 
 /* Library Page Styles */
