@@ -24,7 +24,7 @@ const AboutPage = () => {
                     </div>
                     
                     <div className="credit-section">
-                        <h3>Edited by</h3><p>Maggie Lane</p>
+                        <h3>Edited by</h3><p>Maggie Lange</p>
                     </div>
                     
                     <div className="credit-section">

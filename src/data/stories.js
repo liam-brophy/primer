@@ -17,39 +17,25 @@ When she'd toured the apartment, the kitchen had caught the girl's attention wit
 
 The idea, then, that untold numbers of small brown bugs might also live in her kitchen was intolerable. They were easy enough to ignore during the day while they hid in their crevices. But after sundown, she'd flip on the kitchen light to find half a dozen circling the cat's food bowl. These varied in size so much that at first she thought they might be different species. The smallest bug was barely bigger than a pinhead; the medium-sized ones were about the length of her thumbnail; the largest ran the length of the tip of her thumb to her first knuckle. The last were faster, more agile, and smarter. If her shadow fell over them, they would race to the nearest crack between counter and floor.
 
-It was the evening she opened her trashcan and saw three of the largest bugs skittering
-around the lid that finally convinced her to do some Googling. She typed:
+It was the evening she opened her trashcan and saw three of the largest bugs skittering around the lid that finally convinced her to do some Googling. She typed: 
 brown beetle
 small brown beetle NYC
 fast brown beetle
 brown bug white stripe
 
-Page after page turned up photos she didn't recognize: carpet beetles, earwigs. Finally,
-on a site called "Pestworld.org," she found what she was looking for: brown bug, white
-stripe, a life cycle that explained all the variants she'd come to know. Her bugs were German cockroaches.
+Page after page turned up photos she didn't recognize: carpet beetles, earwigs. Finally, on a site called "Pestworld.org," she found what she was looking for: brown bug, white stripe, a life cycle that explained all the variants she'd come to know. Her bugs were German cockroaches.
 
-The German cockroach is different from the American, which is rust-brown and can
-grow an inch and a half or more in length. Commonly called "water bugs," American
-roaches like the dark and damp and often crawl into homes through plumbing. They
-also, the girl read with a shudder, have wings; some species can fly. German
-cockroaches, on the other hand, are small-bodied, light brown or tan, with telltale
-stripes. They prefer warm, humid places that also provide a source of food — places like kitchens.
+The German cockroach is different from the American, which is rust-brown and can grow an inch and a half or more in length. Commonly called "water bugs," American roaches like the dark and damp and often crawl into homes through plumbing. They also, the girl read with a shudder, have wings; some species can fly. German cockroaches, on the other hand, are small-bodied, light brown or tan, with telltale stripes. They prefer warm, humid places that also provide a source of food — places like kitchens.
 
 It turned out that rooting out a German roach infestation was a lot of work. It involved several rounds of insecticide as well as baited traps meant to entice the roaches to eat poisoned food, then return to the nest and share it with their fellows. The girl did not want poison in her kitchen. She did not want to clear off every shelf, wipe it down, and bait it. She did not want to vacuum every joint seam in the room; joint seams were something she hadn't noticed before but that suddenly seemed to be everywhere, a coalescence spiraling into infinity like a Fibonacci sequence. All the storage space that had once delighted her now housed the enemy. All the crevices that once seemed almost too generous were now unknown.
 
-The girl knew what to do in this situation because it is what you're supposed to do
-when something goes wrong: call the landlord. The landlord would send over the
-superintendent, an overly friendly alcoholic in his late 50s. The superintendent, toting
-his bottle of chemicals, would show up unannounced, probably during a work call. He might mention that he would hate to walk in on her naked. He might ask whether she had a boyfriend yet. He'd done both of these things before, and the girl hadn't really registered them until he'd left. She wished she'd come up with a sharp retort — even screamed at the man to get out of her house. Instead, she had done nothing as he walked down her narrow hallway, down the stairs, and back out into the world. The memory of her own impotence made her feel a bit sick.
+The girl knew what to do in this situation because it is what you're supposed to do when something goes wrong: call the landlord. The landlord would send over the superintendent, an overly friendly alcoholic in his late 50s. The superintendent, toting his bottle of chemicals, would show up unannounced, probably during a work call. He might mention that he would hate to walk in on her naked. He might ask whether she had a boyfriend yet. He'd done both of these things before, and the girl hadn't really registered them until he'd left. She wished she'd come up with a sharp retort — even screamed at the man to get out of her house. Instead, she had done nothing as he walked down her narrow hallway, down the stairs, and back out into the world. The memory of her own impotence made her feel a bit sick.
 
 The next morning before work, the girl unlocked her phone and scrolled through her contacts, finger hovering above her landlord's number. She walked into the kitchen, which looked pristine. She tried to resurface the panic of last night and couldn't; nearly eight hours unconscious is enough to dull the edge of most mundane horrors. Instead, she put down her phone and picked up the kettle.
 
-Days passed. One morning, she opened the kitchen cabinet to find a crunchy, striated,
-yellowish sac about the size of a dime lying next to a stack of bowls. It was hollowed out,
-empty. But she thought she knew what had been in there.
+Days passed. One morning, she opened the kitchen cabinet to find a crunchy, striated, yellowish sac about the size of a dime lying next to a stack of bowls. It was hollowed out, empty. But she thought she knew what had been in there.
 
-She started seeing the roaches more often. In the evening, she'd come into the kitchen
-and catch one scurrying out of the dish-drying rack. Once, in broad daylight, a full-grown insect wriggled out of the electrical outlet next to her toaster. She smashed the bugs with anything on hand: a piece of mail, a book, the blue silicone spatula she happened to be holding. After a while, she cut out the middleman and started killing them with the naked palms of her hands. They were so small, their exoskeletons so fine, that they barely made a crunch.
+She started seeing the roaches more often. In the evening, she'd come into the kitchen and catch one scurrying out of the dish-drying rack. Once, in broad daylight, a full-grown insect wriggled out of the electrical outlet next to her toaster. She smashed the bugs with anything on hand: a piece of mail, a book, the blue silicone spatula she happened to be holding. After a while, she cut out the middleman and started killing them with the naked palms of her hands. They were so small, their exoskeletons so fine, that they barely made a crunch.
 
 She did try some things on her own. She bought clear plastic protectors designed to baby-proof plugs. Cinnamon powder, according to the internet, was a roach deterrent; she sprinkled it in corners. She wasn't sure whether she actually expected any of this to help. It was more that it felt necessary to seem to be doing something. The roaches still disgusted her, but she'd stopped panicking when they showed up. Their absence was a nice surprise, but their presence was expected, like passing an unpleasant neighbor on the way to work.
 
@@ -57,7 +43,7 @@ One night, the girl stayed out much later than usual. Normally she didn't do dri
 
 "Hi, boys," she said.
 
-**
+***
 
 It was March, and the girl felt as though she was coming alive again. The winter had been brutal with a polar vortex hanging over much of the state for months, and she'd only recently started to re-perceive herself as a body covered in skin rather than thin thermal base layers. Her apartment had stayed warm throughout, ancient radiators screaming. They had kept her alive — kept her friends alive, too.
 
@@ -65,17 +51,11 @@ A colleague was on his way over for an after-work drink. They had one of those r
 
 The buzzer rang, and the girl adjusted the bottle of red she'd placed on the kitchen island. She performed the familiar sprint and skid down the hall, arriving at the door with enough time to catch her coworker's face in the videocom. She buzzed him in and heard him climbing the steps.
 
-She unlatched the door and went back to the kitchen to set out wine glasses. He
-knocked, and she yelled down the hall — a cool girl, a carefree girl — for him to come in.
-He took his shoes off by the door.
+She unlatched the door and went back to the kitchen to set out wine glasses. He knocked, and she yelled down the hall — a cool girl, a carefree girl — for him to come in. He took his shoes off by the door.
 
-She heard him walking down the hall to the kitchen, and then he was there, in the warm,
-bright space with her, breathing a little heavily from the stairs. He smelled sweet like
-sun-scorched grass.
+She heard him walking down the hall to the kitchen, and then he was there, in the warm, bright space with her, breathing a little heavily from the stairs. He smelled sweet like sun-scorched grass.
 
-The girl watched him look around then watched his face twist into what might have
-been revulsion. She was confused as to why this might be. Had she forgotten to reapply
-deodorant? Did he hate red wine?
+The girl watched him look around then watched his face twist into what might have been revulsion. She was confused as to why this might be. Had she forgotten to reapply deodorant? Did he hate red wine?
 
 But he wasn't looking at the bottle; his eyes were fixed on the floor.
 
@@ -315,7 +295,7 @@ When she was very young, so young she could barely remember it, she had this rec
   {
     id: 5,
     title: "When I Was A Tree I Had A Root Fetish, & The Forest Wasn't A Church But A Congregation",
-    author: "Griffin",
+    author: "Colin Griffin",
     content: `From my vantage point, slouched as I am in a camp chair near the rim of a crater in the Mare Serenitatis region of the moon, it doesn't matter where you walk your dog, the point is that smells are smelled. Or is it smelt? I happen to be more intrigued by alchemy than metallurgy, and I abstain from eating fish so that's that. Hang on, let me just
 
 ~Take your time~
