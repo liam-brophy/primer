@@ -107,7 +107,7 @@ exports.handler = async (event, context) => {
       line_items: lineItems,
       mode: 'payment',
       success_url: `${process.env.URL}/order-confirmation?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.URL}/preorders`,
+      cancel_url: `${process.env.URL}/orders`,
       metadata: {
         orderId: orderId.toString()
       }

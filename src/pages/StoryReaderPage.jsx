@@ -7,7 +7,8 @@ import { useTheme } from '../context/ThemeContext';
 const StoryReaderPage = () => {
     const { theme } = useTheme();
     const { storyId } = useParams();
-    const story = stories.find(story => story.id === storyId);
+    // Convert storyId to number for comparison
+    const story = stories.find(story => story.id === parseInt(storyId));
 
     if (!story) {
         return <div>Story not found</div>;
@@ -20,7 +21,11 @@ const StoryReaderPage = () => {
                 <p className="story-meta">By {story.author}</p>
             </div>
             <div className="story-content">
-                <p className="coming-soon-message">Full story available on August 8th</p>
+                <div className="story-text">
+                    {story.content.split('\n').map((paragraph, index) => (
+                        paragraph.trim() ? <p key={index}>{paragraph.trim()}</p> : <br key={index} />
+                    ))}
+                </div>
             </div>
         </div>
     );

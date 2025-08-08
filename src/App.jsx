@@ -15,17 +15,17 @@ import { useTheme } from './context/ThemeContext';
 const AppContent = () => {
     const location = useLocation();
     const { theme } = useTheme();
-    const isPreordersPage = location.pathname === '/preorders';
+    const isOrdersPage = location.pathname === '/orders';
     const isOrderConfirmationPage = location.pathname === '/order-confirmation';
     const isAdminPage = location.pathname === '/admin';
-    const isSpecialPage = isPreordersPage || isOrderConfirmationPage || isAdminPage;
+    const isSpecialPage = isOrdersPage || isOrderConfirmationPage || isAdminPage;
 
     return (
         <div className={`app-wrapper ${theme}`}>
             <Header />
             {isSpecialPage ? (
                 <Routes>
-                    <Route path="/preorders" element={<PreordersPage />} />
+                    <Route path="/orders" element={<PreordersPage />} />
                     <Route path="/order-confirmation" element={<OrderConfirmation />} />
                     <Route path="/admin" element={<AdminDashboard />} />
                 </Routes>

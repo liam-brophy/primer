@@ -53,9 +53,32 @@
   color: #eee;
 }
 
-.coming-soon-message {
-  font-size: 1.5rem;
-  text-align: center;
-  padding: 3rem 0;
-  transition: color 0.3s ease;
+.story-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.story-text p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.story-text br {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .story-reader-container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+  
+  .story-header h1 {
+    font-size: 2rem;
+  }
+  
+  .story-text {
+    font-size: 1rem;
+  }
 }

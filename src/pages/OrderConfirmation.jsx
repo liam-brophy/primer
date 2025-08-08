@@ -61,8 +61,8 @@ const OrderConfirmation = () => {
                     <p className="confirmation-error">
                         {error || 'Could not retrieve order details'}
                     </p>
-                    <a href="/preorders" className="confirmation-button">
-                        Return to Preorder Page
+                    <a href="/orders" className="confirmation-button">
+                        Return to Order Page
                     </a>
                 </div>
             </div>

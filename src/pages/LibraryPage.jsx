@@ -5,6 +5,19 @@ import '../styles/global.css';
 import { useTheme } from '../context/ThemeContext';
 import AnimatedText from '../components/AnimatedText';
 
+// Helper function to extract the first sentence from story content
+const getFirstSentence = (content) => {
+    // Remove any leading/trailing whitespace and line breaks
+    const cleanContent = content.trim();
+    // Find the first sentence by looking for the first period, exclamation mark, or question mark
+    const match = cleanContent.match(/^[^.!?]*[.!?]/);
+    if (match) {
+        return match[0].trim() + '...';
+    }
+    // If no sentence ending is found, take the first 100 characters
+    return cleanContent.substring(0, 100) + '...';
+};
+
 // Accordion Item Component
 const AccordionItem = ({ story, isOpen, toggleAccordion }) => {
     const { theme } = useTheme();
@@ -21,12 +34,10 @@ const AccordionItem = ({ story, isOpen, toggleAccordion }) => {
             {isOpen && (
                 <div className="accordion-content">
                     <p className="story-meta">By {story.author}</p>
-                    <p className="story-excerpt">Full story available on August 8th</p>
-                    {/* Temporarily commented out
+                    <p className="story-excerpt">{getFirstSentence(story.content)}</p>
                     <Link to={`/story/${story.id}`} className="read-more-link">
                         Read Full Story
                     </Link>
-                    */}
                 </div>
             )}
         </div>
