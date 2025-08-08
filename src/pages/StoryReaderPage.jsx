@@ -6,12 +6,19 @@ import { useTheme } from '../context/ThemeContext';
 
 const StoryReaderPage = () => {
     const { theme } = useTheme();
-    const { storyId } = useParams();
-    // Convert storyId to number for comparison
-    const story = stories.find(story => story.id === parseInt(storyId));
+    const { id } = useParams();
+    // Convert id to number for comparison
+    const story = stories.find(story => story.id === parseInt(id));
 
     if (!story) {
-        return <div>Story not found</div>;
+        return (
+            <div className={`story-reader-container ${theme}`}>
+                <div className="story-header">
+                    <h1>Story not found</h1>
+                    <p className="story-meta">The story you're looking for doesn't exist.</p>
+                </div>
+            </div>
+        );
     }
 
     return (
