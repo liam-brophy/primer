@@ -8,16 +8,16 @@
   publish = "dist"
   framework = "vite"
 
-# Redirect for order confirmation page
-[[redirects]]
-  from = "/order-confirmation"
-  to = "/order-confirmation.html"
-  status = 200
-
 # Redirect for API routes
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
+  status = 200
+
+# SPA fallback - this must be the last redirect rule
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
   status = 200
 
 # Environment variables should be set in the Netlify UI
