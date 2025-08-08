@@ -212,8 +212,8 @@ ${formData.country === 'US' ? 'United States' :
         <div className={`preorder-container ${theme}`}>
             <div className="preorder-card">
                 <div className="preorder-header">
-                    <h1 className="preorder-title">Preorder Volume One</h1>
-                    <p>Reserve your copy of Primer's inaugural collection</p>
+                    <h1 className="preorder-title">Order Volume One</h1>
+                    <p>Get your copy of Primer's inaugural collection</p>
                     
                     <div className="book-mockup-space">
                         <img 
@@ -233,7 +233,7 @@ ${formData.country === 'US' ? 'United States' :
                     // Payment Success Confirmation
                     <div className="payment-success">
                         <h2>Order Confirmed</h2>
-                        <p>Thank you for your preorder, {successDetails.customerName}. You'll receive a confirmation email shortly with your order details and updates on shipping.</p>
+                        <p>Thank you for your order, {successDetails.customerName}. You'll receive a confirmation email shortly with your order details and updates on shipping.</p>
                         
                         <div className="order-details">
                             <h3>Order Summary</h3>
