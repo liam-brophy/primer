@@ -258,6 +258,30 @@ img {
     position: relative; /* For potential hover effects */
     font-size: 1.2rem; /* Slightly larger font size for nav items */
     letter-spacing: 0.03em; /* Subtle letter spacing */
+    transition: all 0.3s ease; /* Smooth transitions */
+}
+
+/* Subtle underline for active navigation links */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-text);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.main-nav a.active::after {
+    width: 100%;
+}
+
+/* Hover effect for non-active links */
+.main-nav a:not(.active):hover::after {
+    width: 60%;
+    opacity: 0.5;
 }
 
 /* Responsive Styles for Mobile Menu */
@@ -302,6 +326,22 @@ img {
         display: block; /* Make links take full width */
         padding: var(--base-spacing);
         font-size: 1.3rem; /* Slightly larger on mobile for better touch targets */
+        transition: all 0.3s ease; /* Smooth transitions */
+    }
+
+    /* Mobile active state styling */
+    .main-nav a::after {
+        left: 0;
+        transform: none;
+    }
+    
+    .main-nav a.active::after {
+        width: 100%;
+    }
+
+    .main-nav a:not(.active):hover::after {
+        width: 40%;
+        opacity: 0.5;
     }
 }
 
@@ -739,7 +779,7 @@ body:not(.dark) .paragraph.center.calloutcenter {
 /* Footer Styles */
 .footer-container {
   text-align: center;
-  padding: var(--base-spacing) 0;
+  padding: calc(var(--base-spacing) * 0.5) 0; /* Reduced padding to half */
   margin-top: auto;
   width: 100%;
   background-color: var(--color-background);
@@ -749,4 +789,6 @@ body:not(.dark) .paragraph.center.calloutcenter {
 .footer-container p {
   margin-bottom: 0;
   text-align: center;
+  font-size: 0.8rem; /* Smaller text */
+  opacity: 0.8; /* Slightly faded */
 }

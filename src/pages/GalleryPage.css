@@ -1,0 +1,387 @@
+/* Gallery Carousel Styles */
+.gallery-container {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    height: 80vh; /* Take up most of viewport height while leaving space for header/footer */
+    overflow: hidden;
+    background-color: transparent; /* Ensure no gray background */
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Match the gallery container height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    padding: 60px 80px 120px 80px; /* More bottom padding to avoid caption overlap */
+    box-sizing: border-box;
+}
+
+.carousel-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.5s ease;
+    border-radius: 4px;
+}
+
+.carousel-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    font-size: 1.2rem;
+    background: none; /* Remove background */
+    opacity: 0.6;
+}
+
+.carousel-placeholder span {
+    margin-bottom: 1rem;
+}
+
+.carousel-placeholder p {
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Navigation Arrows */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: inherit;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'GT Alpina Condensed Thin', serif;
+    font-weight: 300;
+    opacity: 0.6;
+}
+
+.carousel-nav:hover {
+    opacity: 1;
+    border-color: rgba(128, 128, 128, 0.6);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-prev {
+    left: 2rem;
+}
+
+.carousel-next {
+    right: 2rem;
+}
+
+/* Caption */
+.carousel-caption {
+    position: absolute;
+    bottom: 3.5rem; /* Moved away from bottom edge */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 10;
+    max-width: 600px; /* Reduced max width for more compact layout */
+    width: 100%;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.caption-title {
+    font-family: 'GT Alpina Condensed Thin', serif;
+    font-size: 0.9rem; /* Smaller for title */
+    font-weight: 300;
+    margin-bottom: 0.125rem;
+    line-height: 1.2;
+    text-align: center;
+    font-style: italic; /* Italic for title */
+}
+
+.caption-artist {
+    font-family: 'GT Alpina Condensed Thin', serif;
+    font-size: 1.1rem; /* Larger for artist name */
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+    font-style: normal; /* Normal for artist name */
+    text-align: center;
+}
+
+.caption-details {
+    font-family: 'GT Alpina Condensed Thin', serif;
+    font-size: 0.75rem; /* Reduced from 0.9rem */
+    opacity: 0.8;
+    margin: 0;
+    font-weight: 300;
+    text-align: center;
+}
+
+/* Dot Indicators */
+.carousel-indicators {
+    position: absolute;
+    bottom: 1.5rem; /* Moved away from caption */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    z-index: 10;
+    padding: 0.5rem;
+}
+
+.indicator {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.3;
+    position: relative;
+    overflow: hidden;
+}
+
+.indicator::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.indicator.active {
+    opacity: 0.8;
+    transform: scale(1.4);
+}
+
+.indicator.active::before {
+    transform: scale(1);
+}
+
+/* Image Counter */
+.carousel-counter {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-family: 'GT Alpina Condensed Thin', serif;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+/* Theme-specific styles */
+.gallery-container.light {
+    background-color: var(--color-background); /* Use theme white */
+    color: var(--color-text);
+}
+
+.gallery-container.dark {
+    background-color: var(--color-background); /* Use theme black */
+    color: var(--color-text);
+}
+
+.gallery-container.light .carousel-caption {
+    color: #333;
+}
+
+.gallery-container.dark .carousel-caption {
+    color: #e0e0e0;
+}
+
+.gallery-container.light .carousel-nav {
+    color: #333;
+    border-color: rgba(51, 51, 51, 0.3);
+}
+
+.gallery-container.dark .carousel-nav {
+    color: #e0e0e0;
+    border-color: rgba(224, 224, 224, 0.3);
+}
+
+.gallery-container.light .carousel-nav:hover {
+    border-color: rgba(51, 51, 51, 0.6);
+}
+
+.gallery-container.dark .carousel-nav:hover {
+    border-color: rgba(224, 224, 224, 0.6);
+}
+
+.gallery-container.light .carousel-placeholder {
+    background: none; /* Remove gray background */
+    color: #666;
+}
+
+.gallery-container.dark .carousel-placeholder {
+    background: none; /* Remove gray background */
+    color: #aaa;
+}
+
+.gallery-container.light .indicator {
+    background-color: #333;
+}
+
+.gallery-container.light .indicator::before {
+    background-color: #333;
+}
+
+.gallery-container.dark .indicator {
+    background-color: #e0e0e0;
+}
+
+.gallery-container.dark .indicator::before {
+    background-color: #e0e0e0;
+}
+
+.gallery-container.light .carousel-counter {
+    background: rgba(255, 255, 255, 0.3);
+    color: #333;
+}
+
+.gallery-container.dark .carousel-counter {
+    background: rgba(0, 0, 0, 0.3);
+    color: #e0e0e0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-container {
+        /* Fix alignment issues on tablet/mobile */
+        position: relative;
+        width: 100vw;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        transform: translateX(0); /* Reset any transform issues */
+    }
+    
+    .carousel-image-container {
+        padding: 60px 20px 140px 20px; /* More bottom padding for caption space */
+    }
+    
+    .carousel-nav {
+        font-size: 1rem;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .carousel-prev {
+        left: 1rem;
+    }
+    
+    .carousel-next {
+        right: 1rem;
+    }
+    
+    .carousel-caption {
+        bottom: 3rem;
+        padding: 0 1rem;
+        max-width: 500px; /* Slightly smaller max width */
+    }
+    
+    /* Keep caption text consistent - no scaling */
+    .caption-artist {
+        font-size: 1.1rem; /* Same as desktop */
+    }
+    
+    .caption-title {
+        font-size: 0.9rem; /* Same as desktop */
+    }
+    
+    .caption-details {
+        font-size: 0.75rem; /* Same as desktop */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        /* Alternative approach for very small screens */
+        position: relative;
+        width: 100%;
+        left: auto;
+        right: auto;
+        margin-left: 0;
+        margin-right: 0;
+        transform: none;
+    }
+    
+    .carousel-image-container {
+        padding: 40px 15px 160px 15px; /* Even more bottom padding for small screens */
+    }
+    
+    .carousel-nav {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+    
+    .carousel-prev {
+        left: 0.5rem;
+    }
+    
+    .carousel-next {
+        right: 0.5rem;
+    }
+    
+    .carousel-caption {
+        bottom: 2.5rem;
+        padding: 0 1rem;
+        max-width: 400px; /* Smaller max width for mobile */
+    }
+    
+    /* Keep caption text consistent - no scaling */
+    .caption-artist {
+        font-size: 1.1rem; /* Same as desktop */
+    }
+    
+    .caption-title {
+        font-size: 0.9rem; /* Same as desktop */
+    }
+    
+    .caption-details {
+        font-size: 0.75rem; /* Same as desktop */
+    }
+    
+    .carousel-indicators {
+        bottom: 1rem; /* Move indicators closer to bottom on small screens */
+    }
+}
+

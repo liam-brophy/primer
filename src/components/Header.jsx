@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { theme } = useTheme(); // Keep theme for logo, remove toggleTheme
+    const location = useLocation(); // Hook to get current route
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+    };
+
+    // Helper function to determine if a link is active
+    const isActiveLink = (path) => {
+        if (path === '/') {
+            return location.pathname === '/';
+        }
+        return location.pathname.startsWith(path);
     };
 
     // In Vite, assets in the public folder are served at the root path
@@ -29,9 +38,42 @@ const Header = () => {
             </button>
             <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
                 <ul>
-                    <li><Link to="/library" onClick={() => setIsMenuOpen(false)}>Library</Link></li>
-                    <li><Link to="/orders" onClick={() => setIsMenuOpen(false)}>Volume I</Link></li>
-                    <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About</Link></li>
+                    <li>
+                        <Link 
+                            to="/library" 
+                            className={isActiveLink('/library') ? 'active' : ''}
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            Library
+                        </Link>
+                    </li>
+                    <li>
+                        <Link 
+                            to="/gallery" 
+                            className={isActiveLink('/gallery') ? 'active' : ''}
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            Gallery
+                        </Link>
+                    </li>
+                    <li>
+                        <Link 
+                            to="/orders" 
+                            className={isActiveLink('/orders') ? 'active' : ''}
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            Volume I
+                        </Link>
+                    </li>
+                    <li>
+                        <Link 
+                            to="/about" 
+                            className={isActiveLink('/about') ? 'active' : ''}
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            About
+                        </Link>
+                    </li>
                 </ul>
             </nav>
         </header>

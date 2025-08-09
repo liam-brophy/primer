@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import LibraryPage from './pages/LibraryPage';
+import GalleryPage from './pages/GalleryPage';
 import StoryReaderPage from './pages/StoryReaderPage';
 import AboutPage from './pages/AboutPage';
 import PreordersPage from './pages/PreordersPage';
@@ -34,6 +35,7 @@ const AppContent = () => {
                     <Routes>
                         <Route path="/" element={<HomePage />} />
                         <Route path="/library" element={<LibraryPage />} />
+                        <Route path="/gallery" element={<GalleryPage />} />
                         <Route path="/story/:id" element={<StoryReaderPage />} />
                         <Route path="/about" element={<AboutPage />} />
                     </Routes>
