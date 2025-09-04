@@ -89,7 +89,10 @@ ${formData.country === 'US' ? 'United States' :
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(submissionData)
+                body: JSON.stringify({
+                    ...submissionData,
+                    shipping: formData.isPickup ? 0 : 499  // Add shipping fee (in cents) if not pickup
+                })
             });
             
             // Check if the response is OK before trying to parse JSON
