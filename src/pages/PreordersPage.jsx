@@ -216,9 +216,6 @@ ${formData.country === 'US' ? 'United States' :
             <div className="preorder-card">
                 <div className="preorder-header">
                     <h1 className="preorder-title">Order Volume I</h1>
-                    <div className="print-run-alert">
-                        <p>⚠️ Copies ordered after 8/9 will be delayed for the second print run. We will keep you posted via email as to when new copies are available!</p>
-                    </div>
                     <p>Get your copy of Primer's inaugural collection</p>
                     
                     <div className="book-mockup-space">

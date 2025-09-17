@@ -283,14 +283,14 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .gallery-container {
-        /* Fix alignment issues on tablet/mobile */
+        /* Simplified full-width approach for better mobile compatibility */
         position: relative;
-        width: 100vw;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-        transform: translateX(0); /* Reset any transform issues */
+        width: 100%;
+        left: auto;
+        right: auto;
+        margin-left: 0;
+        margin-right: 0;
+        transform: none;
     }
     
     .carousel-image-container {
@@ -315,6 +315,10 @@
         bottom: 3rem;
         padding: 0 1rem;
         max-width: 500px; /* Slightly smaller max width */
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        margin: 0;
     }
     
     /* Keep caption text consistent - no scaling */
@@ -333,7 +337,7 @@
 
 @media (max-width: 480px) {
     .gallery-container {
-        /* Alternative approach for very small screens */
+        /* Simplified approach for very small screens */
         position: relative;
         width: 100%;
         left: auto;
@@ -365,6 +369,10 @@
         bottom: 2.5rem;
         padding: 0 1rem;
         max-width: 400px; /* Smaller max width for mobile */
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        margin: 0;
     }
     
     /* Keep caption text consistent - no scaling */
