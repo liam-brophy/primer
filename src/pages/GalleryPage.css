@@ -1,11 +1,7 @@
 /* Gallery Carousel Styles */
 .gallery-container {
     position: relative;
-    width: 100vw;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    width: 100%;
     height: 80vh; /* Take up most of viewport height while leaving space for header/footer */
     overflow: hidden;
     background-color: transparent; /* Ensure no gray background */
@@ -107,14 +103,13 @@
 .carousel-caption {
     position: absolute;
     bottom: 3.5rem; /* Moved away from bottom edge */
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    margin: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     text-align: center;
     z-index: 10;
     max-width: 600px; /* Reduced max width for more compact layout */
-    width: auto;
+    width: 100%;
     padding: 0 2rem;
     box-sizing: border-box;
 }
@@ -284,14 +279,10 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .gallery-container {
-        /* Simplified full-width approach for better mobile compatibility */
+        /* Consistent with desktop - simple full-width container */
         position: relative;
         width: 100%;
-        left: auto;
-        right: auto;
-        margin-left: 0;
-        margin-right: 0;
-        transform: none;
+        height: 80vh;
     }
     
     .carousel-image-container {
@@ -316,11 +307,10 @@
         bottom: 3rem;
         padding: 0 1rem;
         max-width: 500px; /* Slightly smaller max width */
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-        margin: 0;
-        width: auto;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 100%;
     }
     
     /* Keep caption text consistent - no scaling */
@@ -339,14 +329,10 @@
 
 @media (max-width: 480px) {
     .gallery-container {
-        /* Simplified approach for very small screens */
+        /* Consistent with other breakpoints - simple full-width container */
         position: relative;
         width: 100%;
-        left: auto;
-        right: auto;
-        margin-left: 0;
-        margin-right: 0;
-        transform: none;
+        height: 80vh;
     }
     
     .carousel-image-container {
@@ -371,11 +357,10 @@
         bottom: 2.5rem;
         padding: 0 1rem;
         max-width: 400px; /* Smaller max width for mobile */
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-        margin: 0;
-        width: auto;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 100%;
     }
     
     /* Keep caption text consistent - no scaling */
