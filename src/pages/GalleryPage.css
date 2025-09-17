@@ -107,13 +107,14 @@
 .carousel-caption {
     position: absolute;
     bottom: 3.5rem; /* Moved away from bottom edge */
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    margin: 0;
     text-align: center;
     z-index: 10;
     max-width: 600px; /* Reduced max width for more compact layout */
-    width: 100%;
+    width: auto;
     padding: 0 2rem;
     box-sizing: border-box;
 }
@@ -319,6 +320,7 @@
         right: auto;
         transform: translateX(-50%);
         margin: 0;
+        width: auto;
     }
     
     /* Keep caption text consistent - no scaling */
@@ -373,6 +375,7 @@
         right: auto;
         transform: translateX(-50%);
         margin: 0;
+        width: auto;
     }
     
     /* Keep caption text consistent - no scaling */
