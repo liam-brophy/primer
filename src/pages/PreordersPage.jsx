@@ -115,8 +115,8 @@ ${formData.country === 'US' ? 'United States' :
             setOrderSummary({
                 quantity: formData.quantity,
                 subtotal: result.amount / 100, // Convert cents to dollars
-                shipping: formData.isPickup ? 0 : 'Calculated at checkout',
-                total: formData.isPickup ? result.amount / 100 : 'Calculated at checkout',
+                shipping: result.shipping / 100,
+                total: result.total / 100,
                 shippingRateId: result.shippingRateId
             });
             setIsPaymentStep(true);
@@ -483,11 +483,11 @@ ${formData.country === 'US' ? 'United States' :
                                 </div>
                                 <div className="summary-row">
                                     <span>Shipping</span>
-                                    <span>{typeof orderSummary.shipping === 'string' ? orderSummary.shipping : `$${orderSummary.shipping.toFixed(2)}`}</span>
+                                    <span>${orderSummary.shipping.toFixed(2)}</span>
                                 </div>
                                 <div className="summary-row total">
                                     <span>Total</span>
-                                    <span>{typeof orderSummary.total === 'string' ? orderSummary.total : `$${orderSummary.total.toFixed(2)}`}</span>
+                                    <span>${orderSummary.total.toFixed(2)}</span>
                                 </div>
                             </div>
                         </div>

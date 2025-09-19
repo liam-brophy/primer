@@ -60,18 +60,26 @@ exports.handler = async (event, context) => {
     const quantity = parseInt(data.quantity, 10);
     const amount = unitPrice * quantity;
     
-    // Prepare shipping options
-    let shippingOptions = [];
+    // Calculate shipping using the shipping rate
+    let shippingAmount = 0;
     if (!data.isPickup) {
-      // Use the provided shipping rate ID
-      shippingOptions = [{
-        shipping_rate: 'shr_1S8qGFAr0WKar8jbC8LVSO2b'
-      }];
+      try {
+        // Retrieve the shipping rate to get the amount
+        const shippingRate = await stripe.shippingRates.retrieve('shr_1S8qGFAr0WKar8jbC8LVSO2b');
+        shippingAmount = shippingRate.fixed_amount.amount;
+      } catch (error) {
+        console.error('Error retrieving shipping rate:', error);
+        // Fallback to a default shipping amount if rate retrieval fails
+        shippingAmount = 499; // $4.99 in cents
+      }
     }
+
+    // Calculate total amount including shipping
+    const totalAmount = amount + shippingAmount;
 
     // Create a payment intent with Stripe
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: amount,
+      amount: totalAmount,
       currency: 'usd',
       shipping: data.isPickup ? undefined : {
         name: data.name,
@@ -83,7 +91,6 @@ exports.handler = async (event, context) => {
           country: data.country || 'US'
         }
       },
-      shipping_options: shippingOptions,
       // Save customer information for later reference
       metadata: {
         name: data.name,
@@ -93,7 +100,9 @@ exports.handler = async (event, context) => {
         quantity: quantity.toString(),
         isPickup: data.isPickup ? 'true' : 'false',
         notes: data.notes || '',
-        shipping_rate_id: data.isPickup ? '' : 'shr_1S8qGFAr0WKar8jbC8LVSO2b'
+        shipping_rate_id: data.isPickup ? '' : 'shr_1S8qGFAr0WKar8jbC8LVSO2b',
+        shipping_amount: shippingAmount.toString(),
+        subtotal: amount.toString()
       }
     });
 
@@ -115,8 +124,8 @@ exports.handler = async (event, context) => {
       orderDetails: {
         quantity: quantity,
         amount: amount,
-        shipping: data.isPickup ? 0 : 'calculated_by_stripe',
-        total: data.isPickup ? amount : 'calculated_by_stripe',
+        shipping: shippingAmount,
+        total: totalAmount,
         isPickup: data.isPickup,
         notes: data.notes || '',
         products: [{
@@ -147,8 +156,8 @@ exports.handler = async (event, context) => {
       orderDetails: {
         quantity: quantity,
         amount: amount,
-        shipping: data.isPickup ? 0 : 'calculated_by_stripe',
-        total: data.isPickup ? amount : 'calculated_by_stripe',
+        shipping: shippingAmount,
+        total: totalAmount,
         isPickup: data.isPickup,
         notes: data.notes || '',
         shipping_rate_id: data.isPickup ? '' : 'shr_1S8qGFAr0WKar8jbC8LVSO2b'
@@ -162,7 +171,8 @@ exports.handler = async (event, context) => {
       body: JSON.stringify({
         clientSecret: paymentIntent.client_secret,
         amount: amount,
-        shipping: data.isPickup ? 0 : 'calculated_by_stripe',
+        shipping: shippingAmount,
+        total: totalAmount,
         shippingRateId: data.isPickup ? null : 'shr_1S8qGFAr0WKar8jbC8LVSO2b',
         orderId: 'temp-' + paymentIntent.id // temporary order ID until MongoDB is fixed
       })
