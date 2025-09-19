@@ -115,8 +115,8 @@ ${formData.country === 'US' ? 'United States' :
             setOrderSummary({
                 quantity: formData.quantity,
                 subtotal: result.amount / 100, // Convert cents to dollars
-                shipping: result.shipping / 100,
-                total: result.total / 100,
+                shipping: formData.isPickup ? 0 : 4.99,
+                total: (result.amount + (formData.isPickup ? 0 : 499)) / 100,
                 shippingRateId: result.shippingRateId
             });
             setIsPaymentStep(true);

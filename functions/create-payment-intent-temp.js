@@ -50,19 +50,8 @@ exports.handler = async (event, context) => {
     const quantity = parseInt(data.quantity, 10);
     const amount = unitPrice * quantity;
     
-    // Calculate shipping using the shipping rate
-    let shippingAmount = 0;
-    if (!data.isPickup) {
-      try {
-        // Retrieve the shipping rate to get the amount
-        const shippingRate = await stripe.shippingRates.retrieve('shr_1S8qGFAr0WKar8jbC8LVSO2b');
-        shippingAmount = shippingRate.fixed_amount.amount;
-      } catch (error) {
-        console.error('Error retrieving shipping rate:', error);
-        // Fallback to a default shipping amount if rate retrieval fails
-        shippingAmount = 499; // $4.99 in cents
-      }
-    }
+    // Calculate shipping - fixed rate of $4.99
+    const shippingAmount = data.isPickup ? 0 : 499; // $4.99 in cents
 
     // Calculate total amount including shipping
     const totalAmount = amount + shippingAmount;
@@ -90,9 +79,9 @@ exports.handler = async (event, context) => {
         quantity: quantity.toString(),
         isPickup: data.isPickup ? 'true' : 'false',
         notes: data.notes || '',
-        shipping_rate_id: data.isPickup ? '' : 'shr_1S8qGFAr0WKar8jbC8LVSO2b',
         shipping_amount: shippingAmount.toString(),
-        subtotal: amount.toString()
+        subtotal: amount.toString(),
+        shipping_rate: data.isPickup ? 'pickup' : 'fixed_4_99'
       }
     });
 
