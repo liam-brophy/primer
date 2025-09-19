@@ -89,10 +89,7 @@ ${formData.country === 'US' ? 'United States' :
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                    ...submissionData,
-                    shipping: formData.isPickup ? 0 : 499  // Add shipping fee (in cents) if not pickup
-                })
+                body: JSON.stringify(submissionData)
             });
             
             // Check if the response is OK before trying to parse JSON
@@ -118,8 +115,9 @@ ${formData.country === 'US' ? 'United States' :
             setOrderSummary({
                 quantity: formData.quantity,
                 subtotal: result.amount / 100, // Convert cents to dollars
-                shipping: result.shipping / 100,
-                total: (result.amount + result.shipping) / 100
+                shipping: formData.isPickup ? 0 : 'Calculated at checkout',
+                total: formData.isPickup ? result.amount / 100 : 'Calculated at checkout',
+                shippingRateId: result.shippingRateId
             });
             setIsPaymentStep(true);
             
@@ -485,11 +483,11 @@ ${formData.country === 'US' ? 'United States' :
                                 </div>
                                 <div className="summary-row">
                                     <span>Shipping</span>
-                                    <span>${orderSummary.shipping.toFixed(2)}</span>
+                                    <span>{typeof orderSummary.shipping === 'string' ? orderSummary.shipping : `$${orderSummary.shipping.toFixed(2)}`}</span>
                                 </div>
                                 <div className="summary-row total">
                                     <span>Total</span>
-                                    <span>${orderSummary.total.toFixed(2)}</span>
+                                    <span>{typeof orderSummary.total === 'string' ? orderSummary.total : `$${orderSummary.total.toFixed(2)}`}</span>
                                 </div>
                             </div>
                         </div>

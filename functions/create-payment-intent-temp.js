@@ -50,17 +50,30 @@ exports.handler = async (event, context) => {
     const quantity = parseInt(data.quantity, 10);
     const amount = unitPrice * quantity;
     
-    // Calculate shipping
-    let shipping = 0;
+    // Prepare shipping options
+    let shippingOptions = [];
     if (!data.isPickup) {
-      // Example shipping calculation - you can make this more sophisticated
-      shipping = data.country === 'US' ? 499 : 1999; // $4.99 domestic, $19.99 international
+      // Use the provided shipping rate ID
+      shippingOptions = [{
+        shipping_rate: 'shr_1S8qGFAr0WKar8jbC8LVSO2b'
+      }];
     }
 
     // Create a payment intent with Stripe
     const paymentIntent = await stripe.paymentIntents.create({
       amount: amount,
       currency: 'usd',
+      shipping: data.isPickup ? undefined : {
+        name: data.name,
+        address: {
+          line1: data.address || '',
+          city: data.city || '',
+          state: data.state || '',
+          postal_code: data.zipCode || '',
+          country: data.country || 'US'
+        }
+      },
+      shipping_options: shippingOptions,
       // Save customer information for later reference
       metadata: {
         name: data.name,
@@ -70,7 +83,7 @@ exports.handler = async (event, context) => {
         quantity: quantity.toString(),
         isPickup: data.isPickup ? 'true' : 'false',
         notes: data.notes || '',
-        shipping: shipping.toString()
+        shipping_rate_id: data.isPickup ? '' : 'shr_1S8qGFAr0WKar8jbC8LVSO2b'
       }
     });
 
@@ -89,10 +102,11 @@ exports.handler = async (event, context) => {
       orderDetails: {
         quantity: quantity,
         amount: amount,
-        shipping: shipping,
-        total: amount + shipping,
+        shipping: data.isPickup ? 0 : 'calculated_by_stripe',
+        total: data.isPickup ? amount : 'calculated_by_stripe',
         isPickup: data.isPickup,
-        notes: data.notes || ''
+        notes: data.notes || '',
+        shipping_rate_id: data.isPickup ? '' : 'shr_1S8qGFAr0WKar8jbC8LVSO2b'
       }
     });
 
@@ -103,7 +117,8 @@ exports.handler = async (event, context) => {
       body: JSON.stringify({
         clientSecret: paymentIntent.client_secret,
         amount: amount,
-        shipping: shipping,
+        shipping: data.isPickup ? 0 : 'calculated_by_stripe',
+        shippingRateId: data.isPickup ? null : 'shr_1S8qGFAr0WKar8jbC8LVSO2b',
         orderId: 'temp-' + paymentIntent.id // temporary order ID
       })
     };
