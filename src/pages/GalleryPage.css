@@ -11,9 +11,6 @@
     position: relative;
     width: 100%;
     height: 80vh; /* Match the gallery container height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .carousel-image-container {

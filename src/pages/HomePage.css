@@ -61,3 +61,127 @@
         font-size: 15px;
     }
 }
+
+/* Red Callout Box Styles */
+.red-callout-box {
+    background-color: #DC143C !important; /* Vibrant red */
+    color: white !important;
+    border: none !important; /* Remove any external border */
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    margin: 3rem auto !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(220, 20, 60, 0.3);
+    display: block !important;
+    text-align: center;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Inset white border using pseudo-element */
+.red-callout-box::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid white;
+    border-radius: 12px;
+    pointer-events: none;
+}
+
+/* Ensure all text in the red box is white */
+.red-callout-box, 
+.red-callout-box em, 
+.red-callout-box strong {
+    color: white !important;
+}
+
+/* Responsive adjustments for red box */
+@media (max-width: 768px) {
+    .red-callout-box {
+        padding: 2rem 1.5rem;
+        margin: 2rem auto !important;
+        border-radius: 16px;
+        width: calc(100% - 2rem) !important;
+        max-width: 800px !important;
+        border: none !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+    
+    .red-callout-box::before {
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .red-callout-box {
+        padding: 1.5rem 1rem;
+        margin: 1.5rem auto !important;
+        border-radius: 12px;
+        width: calc(100% - 1rem) !important;
+        max-width: 800px !important;
+        border: none !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+    
+    .red-callout-box::before {
+        top: 6px;
+        left: 6px;
+        right: 6px;
+        bottom: 6px;
+        border-radius: 8px;
+    }
+}
+
+/* Submission Info Section within Red Box */
+.submission-info-section {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    color: white !important;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* White links for the red box */
+.email-link-white, .preorder-link-white {
+    color: white !important;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.email-link-white:hover, .preorder-link-white:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments for submission info section */
+@media (max-width: 768px) {
+    .submission-info-section {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .submission-info-section {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        font-size: 0.9rem;
+    }
+}
