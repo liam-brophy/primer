@@ -27,7 +27,7 @@ const HomePage = () => {
                         <br />
                         How do we anticipate the spectacle of arrival, our real and imagined audiences, the unexpected guest star?
                         <br />
-                        Can we outlive the ignominity of a bad first impression? <br />
+                        Can we outlive the ignominy of a bad first impression? <br />
                         Can we keep up the momentum of a good one? 
                         <br />
                         Do we consider the consequences of entering real and digital spaces before we walk through the door? 
