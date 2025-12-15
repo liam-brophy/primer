@@ -1,6 +1,6 @@
 // Simple test runner for price-utils
 const assert = require('assert');
-const { computeOrderAmounts } = require('./price-utils');
+const { computeOrderAmounts } = require('../functions/price-utils');
 
 // no discount, shipping (default unit price $23.99 = 2399 cents, shipping $4.99 = 499 cents)
 let r = computeOrderAmounts(1, false, '')
