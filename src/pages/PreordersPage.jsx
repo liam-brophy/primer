@@ -50,6 +50,7 @@ const PreorderForm = () => {
             country: 'US',
             quantity: '',
             notes: '',
+            discountCode: '',
             isPickup: false
         }
     });
@@ -115,9 +116,11 @@ ${formData.country === 'US' ? 'United States' :
             setOrderSummary({
                 quantity: formData.quantity,
                 subtotal: result.amount / 100, // Convert cents to dollars
-                shipping: formData.isPickup ? 0 : 4.99,
-                total: (result.amount + (formData.isPickup ? 0 : 499)) / 100,
-                shippingRateId: result.shippingRateId
+                shipping: result.shipping / 100,
+                total: (result.amount + result.shipping) / 100,
+                shippingRateId: result.shippingRateId,
+                discountApplied: result.discountApplied,
+                discountCode: result.discountCode
             });
             setIsPaymentStep(true);
             
@@ -450,6 +453,15 @@ ${formData.country === 'US' ? 'United States' :
                             />
                         </div>
 
+                        <div className="preorder-form-field">
+                            <label>Discount Code (Optional)</label>
+                            <input
+                                type="text"
+                                placeholder="Enter code if you have one"
+                                {...register("discountCode")}
+                            />
+                        </div>
+
                         <button 
                             type="submit" 
                             className="preorder-submit-button"
@@ -485,6 +497,12 @@ ${formData.country === 'US' ? 'United States' :
                                     <span>Shipping</span>
                                     <span>${orderSummary.shipping.toFixed(2)}</span>
                                 </div>
+                                {orderSummary.discountApplied && (
+                                    <div className="summary-row">
+                                        <span>Discount</span>
+                                        <span>Code "{orderSummary.discountCode}" applied</span>
+                                    </div>
+                                )}
                                 <div className="summary-row total">
                                     <span>Total</span>
                                     <span>${orderSummary.total.toFixed(2)}</span>

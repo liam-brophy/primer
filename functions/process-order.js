@@ -18,6 +18,8 @@ const calculateShipping = (quantity, country) => {
   return Math.round(shippingCost * 100); // Convert to cents for Stripe
 };
 
+const { computeOrderAmounts } = require('./price-utils');
+
 exports.handler = async (event, context) => {
   // Only accept POST requests
   if (event.httpMethod !== 'POST') {
@@ -44,8 +46,10 @@ exports.handler = async (event, context) => {
     const db = client.db('primer');
     const orders = db.collection('orders');
     
-    // Base product price in cents
-    const bookPrice = 2399; // $23.99
+    // Determine pricing (supports discount codes)
+    const pricing = computeOrderAmounts(quantity, isPickup, data.discountCode);
+    // Base product price in cents (may be overridden by discount)
+    const bookPrice = pricing.unitPrice;
     
     // Create an order in MongoDB
     const order = {
@@ -84,10 +88,9 @@ exports.handler = async (event, context) => {
         quantity: parseInt(quantity),
       }
     ];
-    
-    // Add shipping cost if not pickup
-    if (!isPickup) {
-      const shippingCost = calculateShipping(parseInt(quantity), data.country);
+
+    // Add shipping cost if not pickup and shipping is > 0
+    if (!isPickup && pricing.shippingAmount > 0) {
       lineItems.push({
         price_data: {
           currency: 'usd',
@@ -95,7 +98,7 @@ exports.handler = async (event, context) => {
             name: 'Shipping',
             description: 'Standard shipping'
           },
-          unit_amount: shippingCost,
+          unit_amount: pricing.shippingAmount,
         },
         quantity: 1,
       });
@@ -109,14 +112,15 @@ exports.handler = async (event, context) => {
       success_url: `${process.env.URL}/order-confirmation?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.URL}/orders`,
       metadata: {
-        orderId: orderId.toString()
+        orderId: orderId.toString(),
+        discount_code: pricing.discountCode || ''
       }
     });
     
     // Update the order with the Stripe session ID
     await orders.updateOne(
       { _id: orderId },
-      { $set: { stripeSessionId: session.id } }
+      { $set: { stripeSessionId: session.id, pricing } }
     );
     
     // Return the session URL for redirect
