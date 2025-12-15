@@ -55,8 +55,10 @@ const PreorderForm = () => {
         }
     });
     
-    // Watch the isPickup field to update the state
+    // Watch relevant fields to update the state and preview pricing
     const watchIsPickup = watch("isPickup");
+    const watchQuantity = watch("quantity");
+    const watchDiscountCode = watch("discountCode");
     
     // Update the local state when the checkbox changes
     React.useEffect(() => {
@@ -227,10 +229,21 @@ ${formData.country === 'US' ? 'United States' :
                         />
                     </div>
                     
-                    <div className="preorder-price">
-                        <span className="preorder-price-amount">$23.99</span>
-                        <span className="preorder-price-shipping">+ shipping</span>
-                    </div>
+                    {/* Dynamic price preview (updates as user changes quantity/discount/pickup) */}
+                    {(() => {
+                        // Determine client-side preview pricing
+                        const qty = parseInt(watchQuantity, 10) || 1;
+                        const discount = (watchDiscountCode || '').toString().trim().toUpperCase() === 'SPACE';
+                        const unit = discount ? 20.00 : 23.99;
+                        const subtotal = unit * qty;
+                        const shipping = watchIsPickup ? 0 : (discount ? 0 : 4.99);
+                        return (
+                            <div className="preorder-price">
+                                <span className="preorder-price-amount">${subtotal.toFixed(2)}</span>
+                                <span className="preorder-price-shipping">{shipping > 0 ? `+ shipping` : 'Free shipping'}</span>
+                            </div>
+                        );
+                    })()}
                 </div>
 
                 {paymentSuccess ? (
