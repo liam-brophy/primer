@@ -64,3 +64,12 @@ If you're still experiencing issues after setting up the environment variables:
 2. Verify your Stripe account is properly set up
 3. Ensure your MongoDB cluster is accessible
 4. Test with the `/api/test-api` endpoint first to verify basic connectivity
+
+## Discount Codes
+
+We've added support for a single reusable discount code:
+
+- Code: `SPACE`
+- Effect: Sets Primer Volume One unit price to $20.00 (from $23.99) and makes shipping free
+
+To apply the discount, customers can enter the code in the "Discount Code" field on the preorder form. The backend validates the code server-side and adjusts pricing and shipping accordingly.

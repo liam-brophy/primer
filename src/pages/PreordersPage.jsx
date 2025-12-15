@@ -50,12 +50,15 @@ const PreorderForm = () => {
             country: 'US',
             quantity: '',
             notes: '',
+            discountCode: '',
             isPickup: false
         }
     });
     
-    // Watch the isPickup field to update the state
+    // Watch relevant fields to update the state and preview pricing
     const watchIsPickup = watch("isPickup");
+    const watchQuantity = watch("quantity");
+    const watchDiscountCode = watch("discountCode");
     
     // Update the local state when the checkbox changes
     React.useEffect(() => {
@@ -115,9 +118,11 @@ ${formData.country === 'US' ? 'United States' :
             setOrderSummary({
                 quantity: formData.quantity,
                 subtotal: result.amount / 100, // Convert cents to dollars
-                shipping: formData.isPickup ? 0 : 4.99,
-                total: (result.amount + (formData.isPickup ? 0 : 499)) / 100,
-                shippingRateId: result.shippingRateId
+                shipping: result.shipping / 100,
+                total: (result.amount + result.shipping) / 100,
+                shippingRateId: result.shippingRateId,
+                discountApplied: result.discountApplied,
+                discountCode: result.discountCode
             });
             setIsPaymentStep(true);
             
@@ -224,10 +229,21 @@ ${formData.country === 'US' ? 'United States' :
                         />
                     </div>
                     
-                    <div className="preorder-price">
-                        <span className="preorder-price-amount">$23.99</span>
-                        <span className="preorder-price-shipping">+ shipping</span>
-                    </div>
+                    {/* Dynamic price preview (updates as user changes quantity/discount/pickup) */}
+                    {(() => {
+                        // Determine client-side preview pricing
+                        const qty = parseInt(watchQuantity, 10) || 1;
+                        const discount = (watchDiscountCode || '').toString().trim().toUpperCase() === 'SPACE';
+                        const unit = discount ? 20.00 : 23.99;
+                        const subtotal = unit * qty;
+                        const shipping = watchIsPickup ? 0 : (discount ? 0 : 4.99);
+                        return (
+                            <div className="preorder-price">
+                                <span className="preorder-price-amount">${subtotal.toFixed(2)}</span>
+                                <span className="preorder-price-shipping">{shipping > 0 ? `+ shipping` : 'Free shipping'}</span>
+                            </div>
+                        );
+                    })()}
                 </div>
 
                 {paymentSuccess ? (
@@ -450,6 +466,15 @@ ${formData.country === 'US' ? 'United States' :
                             />
                         </div>
 
+                        <div className="preorder-form-field">
+                            <label>Discount Code (Optional)</label>
+                            <input
+                                type="text"
+                                placeholder="Enter code if you have one"
+                                {...register("discountCode")}
+                            />
+                        </div>
+
                         <button 
                             type="submit" 
                             className="preorder-submit-button"
@@ -485,6 +510,12 @@ ${formData.country === 'US' ? 'United States' :
                                     <span>Shipping</span>
                                     <span>${orderSummary.shipping.toFixed(2)}</span>
                                 </div>
+                                {orderSummary.discountApplied && (
+                                    <div className="summary-row">
+                                        <span>Discount</span>
+                                        <span>Code "{orderSummary.discountCode}" applied</span>
+                                    </div>
+                                )}
                                 <div className="summary-row total">
                                     <span>Total</span>
                                     <span>${orderSummary.total.toFixed(2)}</span>

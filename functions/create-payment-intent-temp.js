@@ -1,5 +1,6 @@
 // Temporary version without MongoDB for testing
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const { computeOrderAmounts } = require('./price-utils');
 
 exports.handler = async (event, context) => {
   // Enable CORS
@@ -45,16 +46,13 @@ exports.handler = async (event, context) => {
       };
     }
 
-    // Calculate the price
-    const unitPrice = 2399; // $23.99 in cents
+    // Calculate pricing and shipping (supports discount codes)
+    const pricing = computeOrderAmounts(data.quantity, data.isPickup, data.discountCode);
+    const unitPrice = pricing.unitPrice;
     const quantity = parseInt(data.quantity, 10);
-    const amount = unitPrice * quantity;
-    
-    // Calculate shipping - fixed rate of $4.99
-    const shippingAmount = data.isPickup ? 0 : 499; // $4.99 in cents
-
-    // Calculate total amount including shipping
-    const totalAmount = amount + shippingAmount;
+    const amount = pricing.amount;
+    const shippingAmount = pricing.shippingAmount;
+    const totalAmount = pricing.total;
 
     // Create a payment intent with Stripe
     const paymentIntent = await stripe.paymentIntents.create({
@@ -81,7 +79,8 @@ exports.handler = async (event, context) => {
         notes: data.notes || '',
         shipping_amount: shippingAmount.toString(),
         subtotal: amount.toString(),
-        shipping_rate: data.isPickup ? 'pickup' : 'fixed_4_99'
+        shipping_rate: data.isPickup ? 'pickup' : 'fixed_4_99',
+        discount_code: pricing.discountCode || ''
       }
     });
 
@@ -117,6 +116,8 @@ exports.handler = async (event, context) => {
         amount: amount,
         shipping: shippingAmount,
         total: totalAmount,
+        discountApplied: pricing.discountApplied,
+        discountCode: pricing.discountCode,
         shippingRateId: data.isPickup ? null : 'shr_1S8qGFAr0WKar8jbC8LVSO2b',
         orderId: 'temp-' + paymentIntent.id // temporary order ID
       })
