@@ -215,6 +215,23 @@
   transition: all 0.3s ease;
 }
 
+/* Volume select specific styling */
+.volume-select {
+  margin-top: 0.5rem;
+}
+
+.volume-select select {
+  width: auto;
+  max-width: 240px;
+}
+
+.volume-arriving-note {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #c00;
+  font-weight: 600;
+}
+
 .light .preorder-form-field input,
 .light .preorder-form-field textarea,
 .light .preorder-form-field select {

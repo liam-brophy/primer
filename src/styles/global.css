@@ -563,7 +563,109 @@ body:not(.dark) .paragraph.center.calloutcenter {
 .animate-text-fast .animate-text-word {
   animation-duration: 0.8s;
 }
+/* Volume selector styles */
+/* Center the main title */
+.library-title-container { text-align: center; }
+.volume-selector {
+  position: relative;
+}
 
+.volume-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* no space between blocks */
+  align-items: center;
+}
+
+.volume-block {
+  border-radius: 0;
+  width: 100vw; /* span viewport */
+  margin-left: calc(50% - 50vw); /* center the full-bleed block */
+  margin-right: calc(50% - 50vw);
+  padding: 3rem var(--base-spacing); /* increase vertical padding (height) */
+  box-sizing: border-box;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.volume-header {
+  display: flex;
+  justify-content: center;
+}
+
+.volume-toggle {
+  background: none;
+  border: none; /* remove gray borders */
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  color: inherit;
+  width: auto;
+  justify-content: center; /* center title text */
+  border-radius: 0;
+}
+
+.volume-toggle:hover {
+  background: transparent; /* no hover shading */
+}
+
+.volume-caret {
+  margin-left: 0.3rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.volume-stories {
+  margin-top: 0.5rem;
+  padding-left: 0; /* remove left border feel */
+  border-left: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.volume-empty-note {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: inherit;
+  padding: 0.75rem;
+  border: none; /* remove dashed border */
+  background: transparent; /* remove gray background */
+  border-radius: 0;
+  text-align: center;
+  width: 100%;
+}
+
+/* Volume color pairings */
+.volume-block.volume-I {
+  background: #ffd1dc; /* light pink background */
+  color: #0b66d2; /* dark blue text */
+}
+
+.volume-block.volume-II {
+  background: #ff0000; /* pure red */
+  color: #ffffff; /* white text */
+}
+
+/* Ensure animated text inherits color */
+.volume-block .animate-text-container { color: inherit; }
+
+/* Constrain stories content so it lines up with the main content */
+.volume-stories { margin-top: 0; padding: 2rem var(--base-spacing); }
+.volume-stories .accordion-item { max-width: var(--content-max-width); margin-left: auto; margin-right: auto; }
+
+/* Accordion tweaks */
+.accordion-item { margin-bottom: 0.75rem; width:100%; }
+.accordion-header { cursor: pointer; display:flex; justify-content:space-between; align-items:center; }
+.accordion-header h2 { margin:0; text-align:left; width:100%; }
+.accordion-content { margin-top: 0.5rem; text-align:left; }
+
+/* CSS Grid System */
 /* CSS Grid System */
 /* Grid Container */
 .grid-container {

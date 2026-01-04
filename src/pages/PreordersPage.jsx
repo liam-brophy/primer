@@ -51,7 +51,8 @@ const PreorderForm = () => {
             quantity: '',
             notes: '',
             discountCode: '',
-            isPickup: false
+            isPickup: false,
+            volume: 'I'
         }
     });
     
@@ -59,6 +60,7 @@ const PreorderForm = () => {
     const watchIsPickup = watch("isPickup");
     const watchQuantity = watch("quantity");
     const watchDiscountCode = watch("discountCode");
+    const watchVolume = watch("volume");
     
     // Update the local state when the checkbox changes
     React.useEffect(() => {
@@ -180,7 +182,8 @@ ${formData.country === 'US' ? 'United States' :
                     customerName: formData.name,
                     customerEmail: formData.email,
                     amount: (paymentIntent.amount / 100).toFixed(2),
-                    quantity: formData.quantity
+                    quantity: formData.quantity,
+                    volume: formData.volume || 'I'
                 });
                 setPaymentSuccess(true);
             }
@@ -218,8 +221,19 @@ ${formData.country === 'US' ? 'United States' :
         <div className={`preorder-container ${theme}`}>
             <div className="preorder-card">
                 <div className="preorder-header">
-                    <h1 className="preorder-title">Order Volume I</h1>
-                    <p>Get your copy of Primer's inaugural collection</p>
+                    <h1 className="preorder-title">Order</h1>
+                    <p>Get your copy of Primer's collection</p>
+
+                    <div className="preorder-form-field volume-select">
+                        <label>Volume</label>
+                        <select {...register('volume')}>
+                            <option value="I">Volume I</option>
+                            <option value="II">Volume II</option>
+                        </select>
+                        {watchVolume === 'II' && (
+                            <div className="volume-arriving-note">Volume II arriving February 2026</div>
+                        )}
+                    </div>
                     
                     <div className="book-mockup-space">
                         <img 
@@ -265,6 +279,10 @@ ${formData.country === 'US' ? 'United States' :
                             <div className="detail-row">
                                 <span>Quantity</span>
                                 <span>{successDetails.quantity} copy{successDetails.quantity > 1 ? 'ies' : ''}</span>
+                            </div>
+                            <div className="detail-row">
+                                <span>Volume</span>
+                                <span>{successDetails.volume || 'I'}</span>
                             </div>
                             <div className="detail-row">
                                 <span>Total Paid</span>
