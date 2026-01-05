@@ -104,19 +104,19 @@ const AboutPage = () => {
                 
                 <div className="about-credits">
                     <div className="credit-section">
-                        <h3>Edited by</h3><p>Daniel Maloney</p>
+                        <h3>Edited by</h3><p><a href="https://www.phillyqueerbookclub.com/" target="_blank" rel="noopener noreferrer">Daniel Maloney</a></p>
                     </div>
                     
                     <div className="credit-section">
-                        <h3>Edited by</h3><p>Maggie Lange</p>
+                        <h3>Edited by</h3><p><a href="https://www.maggielangewrites.com/6232796-about" target="_blank" rel="noopener noreferrer">Maggie Lange</a></p>
                     </div>
                     
                     <div className="credit-section">
-                        <h3>Curation by</h3><p>Chase Dougherty</p>
+                        <h3>Curation by</h3><p><a href="http://www.chasendougherty.com/" target="_blank" rel="noopener noreferrer">Chase Dougherty</a></p>
                     </div>
                     
                     <div className="credit-section">
-                        <h3>Design by</h3><p>Liam Brophy</p>
+                        <h3>Design by</h3><p><a href="https://www.liam.site" target="_blank" rel="noopener noreferrer">Liam Allaire</a></p>
                     </div>
                 </div>
 

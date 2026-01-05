@@ -1,7 +1,7 @@
 /* HomePage specific styles */
 .home-container {
-    min-height: calc(100vh - 200px); /* Adjust based on your header/footer height */
-    padding: 2rem;
+    min-height: calc(100vh - 200px);
+    padding: 0;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -20,153 +20,170 @@
     transition: color 0.3s ease;
 }
 
-/* Mobile-specific homepage adjustments */
-@media (max-width: 768px) {
-    .home-container {
-        padding: 1rem;
-        min-height: calc(100vh - 150px);
-    }
-    
-    /* Ensure text is readable on mobile */
-    .home-container .paragraph {
-        font-size: 16px;
-        line-height: 1.6;
-        margin: 1rem 0;
-        padding: 1rem;
-    }
-    
-    /* Special handling for the callout section on mobile */
-    .home-container .paragraph.center.calloutcenter {
-        margin: 2rem 0;
-        padding: 1.5rem 1rem;
-        font-size: 16px;
-        line-height: 1.7;
-    }
-}
-
-@media (max-width: 480px) {
-    .home-container {
-        padding: 0.5rem;
-    }
-    
-    .home-container .paragraph {
-        font-size: 15px;
-        margin: 0.5rem 0;
-        padding: 0.75rem;
-    }
-    
-    .home-container .paragraph.center.calloutcenter {
-        margin: 1.5rem 0;
-        padding: 1rem 0.75rem;
-        font-size: 15px;
-    }
-}
-
-/* Red Callout Box Styles */
-.red-callout-box {
-    background-color: #DC143C !important; /* Vibrant red */
-    color: white !important;
-    border: none !important; /* Remove any external border */
-    border-radius: 20px;
-    padding: 3rem 2.5rem;
-    margin: 3rem auto !important;
-    width: 100% !important;
-    max-width: 800px !important;
-    box-sizing: border-box;
+/* Moving Banner Styles */
+.moving-banner {
+    background-color: #DC143C;
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0.5rem 0;
     position: relative;
-    box-shadow: 0 8px 32px rgba(220, 20, 60, 0.3);
-    display: block !important;
-    text-align: center;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
 }
 
-/* Inset white border using pseudo-element */
-.red-callout-box::before {
-    content: '';
+.banner-content {
+    display: inline-block;
+    animation: scroll-left 20s linear infinite;
+    font-size: 2.2rem;
+    font-weight: 100;
+    font-family: var(--font-primary);
+    letter-spacing: 0.05em;
+}
+
+.banner-content span {
+    padding: 0 4rem;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Content with Mockup Background */
+.content-with-mockup {
+    position: relative;
+    padding: 6rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mockup-background {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    border: 1px solid white;
-    border-radius: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 120%;
+    background-image: url('/images/Primer_Mockup_1.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.12;
+    z-index: 0;
     pointer-events: none;
 }
 
-/* Ensure all text in the red box is white */
-.red-callout-box, 
-.red-callout-box em, 
-.red-callout-box strong {
-    color: white !important;
+.content-text {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-/* Responsive adjustments for red box */
+.content-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.content-text .questions-em {
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* Mobile-specific homepage adjustments */
 @media (max-width: 768px) {
-    .red-callout-box {
-        padding: 2rem 1.5rem;
-        margin: 2rem auto !important;
-        border-radius: 16px;
-        width: calc(100% - 2rem) !important;
-        max-width: 800px !important;
-        border: none !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
+    .banner-content {
+        font-size: 1.8rem;
     }
     
-    .red-callout-box::before {
-        top: 8px;
-        left: 8px;
-        right: 8px;
-        bottom: 8px;
-        border-radius: 10px;
+    .banner-content span {
+        padding: 0 3rem;
+    }
+    
+    .content-with-mockup {
+        padding: 3rem 1.5rem;
+        min-height: auto;
+    }
+    
+    .mockup-background {
+        width: 100%;
+        height: 100%;
+        opacity: 0.15;
+    }
+    
+    .content-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .content-text .questions-em {
+        font-size: 0.95rem;
     }
 }
 
 @media (max-width: 480px) {
-    .red-callout-box {
-        padding: 1.5rem 1rem;
-        margin: 1.5rem auto !important;
-        border-radius: 12px;
-        width: calc(100% - 1rem) !important;
-        max-width: 800px !important;
-        border: none !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
+    .moving-banner {
+        padding: 0.4rem 0;
     }
     
-    .red-callout-box::before {
-        top: 6px;
-        left: 6px;
-        right: 6px;
-        bottom: 6px;
-        border-radius: 8px;
+    .banner-content {
+        font-size: 1.5rem;
+    }
+    
+    .banner-content span {
+        padding: 0 2rem;
+    }
+    
+    .content-with-mockup {
+        padding: 2rem 1rem;
+    }
+    
+    .mockup-background {
+        width: 110%;
+        height: 110%;
+        opacity: 0.18;
+    }
+    
+    .content-text p {
+        font-size: 0.95rem;
+    }
+    
+    .content-text .questions-em {
+        font-size: 0.9rem;
     }
 }
 
-/* Submission Info Section within Red Box */
+
+/* Submission Info Section */
 .submission-info-section {
-    margin-top: 2.5rem;
+    margin-top: 3rem;
     padding-top: 2.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    color: white !important;
+    border-top: 1px solid var(--muted);
+    color: var(--color-text);
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
-/* White links for the red box */
-.email-link-white, .preorder-link-white {
-    color: white !important;
+/* Links for submission section */
+.email-link, .preorder-link {
+    color: var(--color-text);
     text-decoration: underline;
     font-weight: 500;
     transition: opacity 0.3s ease;
 }
 
-.email-link-white:hover, .preorder-link-white:hover {
-    opacity: 0.8;
-    text-decoration: underline;
+.email-link:hover, .preorder-link:hover {
+    opacity: 0.7;
 }
 
 /* Responsive adjustments for submission info section */

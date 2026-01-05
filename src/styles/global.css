@@ -30,6 +30,8 @@
   --color-text: #000000;       /* Black text */
   --color-border: #000000;      /* Black borders */
   --color-accent: #cccccc;      /* Light gray for subtle accents if needed */
+  --card-bg: #ffffff;           /* Card background */
+  --muted: #666666;             /* Muted text color */
 
   --container-width: 960px;      /* Max width for general content */
   --reader-width: 650px;         /* Max width for the story reader */
@@ -51,6 +53,8 @@ body.dark {
   --color-text: #ffffff;       /* White text */
   --color-border: #ffffff;     /* White borders */
   --color-accent: #444444;     /* Dark gray for subtle accents */
+  --card-bg: #1a1a1a;          /* Dark card background */
+  --muted: #999999;            /* Muted text for dark mode */
 }
 
 /* Light Theme Variables (explicit for clarity) */
@@ -59,6 +63,8 @@ body.light {
   --color-text: #000000;       /* Black text */
   --color-border: #000000;     /* Black borders */
   --color-accent: #cccccc;     /* Light gray for subtle accents */
+  --card-bg: #ffffff;          /* Card background */
+  --muted: #666666;            /* Muted text color */
 }
 
 /* Basic Reset & Body Styles */
@@ -82,6 +88,22 @@ body {
   font-size: 18px; /* Set base font size to 18px */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='12' cy='12' r='8' fill='none' stroke='%23000000' stroke-width='2'/%3E%3Cline x1='18' y1='18' x2='28' y2='28' stroke='%23000000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") 8 8, auto;
+}
+
+body.dark {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='12' cy='12' r='8' fill='none' stroke='%23FFFFFF' stroke-width='2'/%3E%3Cline x1='18' y1='18' x2='28' y2='28' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") 8 8, auto;
+}
+
+/* Custom cursor for interactive elements */
+a, button, input[type="button"], input[type="submit"], 
+.clickable, [role="button"], label, select, input[type="checkbox"] {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='12' cy='12' r='8' fill='none' stroke='%23000000' stroke-width='2.5'/%3E%3Ccircle cx='12' cy='12' r='5' fill='%23FFD700' fill-opacity='0.5'/%3E%3Cline x1='18' y1='18' x2='28' y2='28' stroke='%23000000' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E") 8 8, pointer;
+}
+
+body.dark a, body.dark button, body.dark input[type="button"], body.dark input[type="submit"], 
+body.dark .clickable, body.dark [role="button"], body.dark label, body.dark select, body.dark input[type="checkbox"] {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='12' cy='12' r='8' fill='none' stroke='%23FFFFFF' stroke-width='2.5'/%3E%3Ccircle cx='12' cy='12' r='5' fill='%23FFD700' fill-opacity='0.5'/%3E%3Cline x1='18' y1='18' x2='28' y2='28' stroke='%23FFFFFF' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E") 8 8, pointer;
 }
 
 /* Responsive font scaling */

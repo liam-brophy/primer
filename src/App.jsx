@@ -10,6 +10,7 @@ import AboutPage from './pages/AboutPage';
 import PreordersPage from './pages/PreordersPage';
 import OrderConfirmation from './pages/OrderConfirmation';
 import AdminDashboard from './pages/AdminDashboard';
+import OrderPage from './pages/OrderPage';
 import ThemeToggleButton from './components/ThemeToggleButton';
 import { useTheme } from './context/ThemeContext';
 
@@ -17,16 +18,18 @@ const AppContent = () => {
     const location = useLocation();
     const { theme } = useTheme();
     const isOrdersPage = location.pathname === '/orders';
+    const isPreordersPage = location.pathname === '/preorders';
     const isOrderConfirmationPage = location.pathname === '/order-confirmation';
     const isAdminPage = location.pathname === '/admin';
-    const isSpecialPage = isOrdersPage || isOrderConfirmationPage || isAdminPage;
+    const isSpecialPage = isOrdersPage || isPreordersPage || isOrderConfirmationPage || isAdminPage;
 
     return (
         <div className={`app-wrapper ${theme}`}>
             <Header />
             {isSpecialPage ? (
                 <Routes>
-                    <Route path="/orders" element={<PreordersPage />} />
+                    <Route path="/orders" element={<OrderPage />} />
+                    <Route path="/preorders" element={<PreordersPage />} />
                     <Route path="/order-confirmation" element={<OrderConfirmation />} />
                     <Route path="/admin" element={<AdminDashboard />} />
                 </Routes>
