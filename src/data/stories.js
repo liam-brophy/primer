@@ -460,6 +460,143 @@ Behind a shroud of clouds, the dull pulse of a winter's sun beats. You pause on 
 Thirteen: A boy who has slept in the bunk above you all summer long shimmies the elastic waistband of his swimsuit down the blunt, straight lines of his hips. You touch him until he, too, shakes, like a tree losing its leaves for the first time. Afterward, you wipe a sticky hand across the back of your legs, and he tells you neither of you were ever there.`,
     date: "2023-04-01",
   },
+  {
+    id: 9,
+    title: "Antares",
+    author: "John Paul Brammer",
+    content: `I arrived at Fire Island hoping to find a connection of some kind. The kind of connection wasn't so important. To connect, I told myself, is the great gift of life. If I could find a bridge between myself and some so-and-so, I'd feel decently human. But this had always been the place where I was most certain that connection was impossible.
+
+Roy and I were smiling at each other. "Where are you from?" I asked. "Kentucky. You?" "Here." "Fire Island?" "No," I said. "Across the bay." "Wow. You must have come here all the time." "The truth is that I avoided and hated it with my life," I said.
+
+Roy I would so appreciate it if you melted with me in this hot tub so we could become each other.
+
+"May I ask you something that veers on the personal?" he asked. "I see no reason why not." "Give me your thoughts on Malevolent Hoof."
+
+"God," I sighed with an exaggerated roll of my eyes. "Not her."
+
+I didn't anticipate Roy's allegiance to Malevolent Hoof, a reviled queen, at least in my circle. She had after all employed many dirty tricks and crossed several boundaries with her castmates. Her antics were notorious and condemned.
+
+And yet, I myself had enjoyed Malevolent Hoof. I had always enjoyed Malevolent Hoof.
+
+Had I simply been honest, perhaps Roy and I might have alighted on something rare and mutual between us. But I also knew that if I were to be honest now, it would expose something desperate and false and unforgivable.
+
+"Oh, damn, I have to check my phone inside," he said. "I might be back, though."
+
+I found it unbearable to think that an entire life of love-making and marital arguments might be scrapped because of an early out in a throwaway season of a reality TV competition.
+
+"No worries," I said. I sank beneath the water and hoped the hot tub would cook me.
+
+We danced. We danced until it got dark, though Moises shuffled off to a new group I did not feel magnetized to. I thought now I could slink off back to the house and perform my prayers. But there he was, standing in the dark, at the seam where the music thinned and lower voices began.
+
+"Hey," he said.
+
+How shocked I was when he claimed me. I'd thought our chances ruined, given my dismissal of Malevolent Hoof. He joined his stride to mine, our voices wrapped in the low-pass filtered pop music from inside. The night sky was clear, illuminating. We walked in silence towards the beach. We didn't say a word until we'd reached the sand.
+
+"When I was in Europe, they didn't refrigerate their eggs," Roy said. "Interesting." "Wouldn't it be nice to have an egg bowl in your kitchen? But you can't. Not in the U.S. They wash them here, so they lose their protective coating." "Terrible. Our country does terrible things."
+
+We stumbled upon some lesbians who were looking through binoculars at the sky. "Want to look?" asked one. "Sure." "That's not Mars," she said, pointing. "It looks like Mars, but it isn't. It's Antares." I looked at Antares, anti-ares, Not Mars. It's only from so far away that it looks like they're making love. In both dimensions, the dual stars are some 79.1 terameters (529 AU) apart, a distance so vast it holds nothing for us non-astronomers. But from here, or, rather, from there, I saw through the binoculars passionate fucking between the two celestial bodies. Antares A: red; great, dying. Antares B: blue-white; hotter, smaller. Between them: a flickering, emerald green.
+
+It looks like it's going totally nuts. The sort of autophilic frenzy at the center of a sun. All these things were Antares, part of the Scorpius constellation, one of the few constellations to remain consistent in both dimensions. Both worlds agree: that's a scorpion.
+
+"Do you ever wonder…" I asked Roy, but trailed off. I partitioned my attention in two. I was looking up at Antares, and searching through the soles of my feet for some sign that the ground was swelling up like a balloon. "Sometimes," he said.`,
+    date: "2026-02-15",
+  },
+  {
+    id: 10,
+    title: "The Debutante",
+    author: "Corley Miller",
+    content: `Because she had grown up in Yalecrest, and because she had been in school and Cotillion and Salt Lake City Debutante with a lot of these boys, and knew which reputations they had acquired at which canyonside parties or speech and debate trips to Provo, and because she had once, at 17, seduced a German chemical engineer while on a family vacation to Cancun, Aisling's judgments had acquired by spring semester a certain authority with her freshman roommate Holly, who was less experienced.
+
+Holly knows she will have to tell Aisling about the breakup. But, miffed that Aisling has been correct, she decides not to tell her about Jason Ingles, who she will keep as a special present for herself.
+
+Holly's only ever been with two people, Olin and this guy at a party in October, and had hoped the furniture portended a different kind of experience, but he's actually kind of anxious, doesn't look her in the eyes, which Olin was really good at. The whole time she feels like someone's cheating out, appealing not to her but some imagined audience. When he goes to clean up Holly lies on the couch and imagines for a moment that it is her house, her furniture, her green couch to lie on naked.
+
+"I really do want to show you what we're thinking," he says, when he gets back, and spreads the pages out in front of them. "So we were thinking—my great-uncle was thinking, actually—he was thinking that actually things are a little darker."
+
+They aren't roommates the next year. Aisling files the paperwork by herself in late March, same day she withdraws from Introduction to Theatrical Production, and though they do still watch the same shows sometimes they do not talk much, other than about things left in the bathroom. The play has a three-night run in April, and though a total of 22 people attend, the Salt Lake Citizen reviews it as bold and innovative, and compliments Holly. She puts it on the bulletin board in 409, and a couple days later Aisling leaves a post-it: you know Ingles OWNS this paper right?
+
+On moveout day, Holly figures she should say something. "Uhh, thanks—you know. This was really, like—" Aisling crabs across the room, never looking at Holly, then hugs her like she is touching something hot, a pair of fast slaps around Holly's shoulders.
+
+They arrange one phone call that summer, Holly telling about swans from the valley and Aisling about parties from her parents' place by Bear Lake. Holly doesn't say 'you should come up, you're so close,' and Aisling doesn't ask. They see each other at school a few times.
+
+The next time Holly hears from Aisling she is 28 and living with three other girls on Leonard Street, in a penthouse belonging to Serge, this crypto guy her boyfriend Nico knows. Serge is usually out of town, doesn't pick up Holly's calls about maintenance or key replacement, then shows up for eight days and wants everybody to party all night with him at YXK or Transformer, doesn't quite call it rent—an annoyance, Holly feels like she's in someone's cabinet of curios. Otherwise it's perfect, for an actress: she pays zero dollars in cash rent, and has been able to cut back to working just one day behind the desk at Naragama gallery.
+
+Holly asks Norah what to do. I can see that you haven't had any contact with this person using your phone or social media presence for almost a decade, Holly. I don't see a reason why it would be a priority.
+
+But Holly kind of wants to, she types back.
+
+I'm not convinced, Holly. You've told me to treat 'career advancement' as a first priority in making this kind of decision. And since we started that priority structure, I think you've found yourself very successful. Do you think that seeing Aisling will help you build the networks and relationships that can help you take the next step?
+
+Norah is right about all this, as usual—and right that things have been going well for Holly since she started asking Norah to make these little decisions for her. It's actually helped her acting—Norah tells her what to audition for and which events to go to, and so Holly can focus on just being the role. It's a huge advantage not having to think about her life.
+
+But she does want to see Aisling—maybe she also wants Aisling to see her, not something that will help the career but that she'll enjoy. So she ignores Norah, this one time.`,
+    date: "2026-02-15",
+  },
+  {
+    id: 11,
+    title: "The Watermelon House",
+    author: "Keegan Smith-Nichols",
+    content: `The porch of the watermelon house is small, barely wide enough to fit the lawn chair, the plastic flamingo, and the bucket of rock salt someone put there long before any of us moved in. In my memory the front door is purple, and I know the lock is sticky. The entryway is a pile of shoes and mailboxes stuffed with letters, cat toys, and dust. A lot of the mail is for people who don't live there anymore.
+
+I found the house when I was looking online for a place to live in Madison, preparing to move halfway across the country for grad school to a city where I knew no one. My standards were minimal: I wanted an east-facing window, and I didn't want a depression apartment. I ruled against basement studio after basement studio. I wanted to live somewhere warm and bright.
+
+In my mind the watermelon house is a living thing and it has always existed. We never were able to find out exactly when it had been built, or when it had become a cooperative house, or when it had been painted like a watermelon with teal shingles and pink trim around the windows. An untrained eye might say that the house was full of junk. This is incorrect; the watermelon house was full of things that hadn't yet found their use.
+
+A few weeks after I moved to Madison, I walked away from the doctor's office injected with my first shot of testosterone. I was buoyant. I'd waited more than a decade for this injection, since I was thirteen or fourteen. I didn't know what informed consent was until I overheard my housemates talking about it. Within a week, I had a prescription. The buoyant feeling lasted until I crossed the street because I realized that no one around me could tell anything was different. The first changes are subtle; they're easy to miss even if you're looking for them. Early transition is lonely. The watermelon house watched me count the hairs sprouting on my chin and listened to me record voice memos as I checked if my voice had gotten deeper. It watched as I lifted weights and grew enough muscle to do a real push-up, then sets of ten. At night sometimes I would open random cupboards in the pantry, hoping to find a snack that I'd overlooked last time I checked. The watermelon house understood my ravenous hunger, not only in my stomach but my hunger to be a man, to be liked, to be taken seriously. Living in the watermelon house, surrounded by people who would notice if I disappeared, was the first time I felt like a person.
+
+When I graduated and moved away from Madison into a room with drab white walls, I felt like my umbilical cord had been severed.
+
+I don't know anyone who lives in the watermelon house anymore. I wouldn't be surprised if it's been eaten by a developer looking to charge more rent for less space. I've left the watermelon house, and I'm entering the rest of my life. Entering and leaving are dependent on perspective. I still cook dinner for people and always make sure there's enough for leftovers. I keep junk around because someday it might be useful to someone. I don't live in the watermelon house anymore, but the house has made its home in me.`,
+    date: "2026-02-15",
+  },
+  {
+    id: 12,
+    title: "Chasing the Line of Beauty",
+    author: "Kurt David",
+    content: `Maya forgave me without fanfare and without my ever having to apologize. We'd hooked up, I'd handled it poorly, but now I was queer, so my bad behavior was recast more generously, as if by the soft string lights that adorned her bedroom off-campus. When she invited me to spend our last winter break together with her family, I tread carefully with my own parents.
+
+"Mom," I said on the phone, "Maya invited me to spend Christmas in Nairobi."
+
+"But you can't miss Christmas," she said.
+
+I'd fallen in love. Aaron was a freckled boy who stuffed his red curls into a bandana. He kept a messy room and studied the social determinants of health. Our relationship was a long time coming, practically foretold. We'd met three years ago on the debate team, and at the end of our first season, they voted us cutest couple.
+
+Poolside at Mau and Papa's, I followed winsome Oxford grad Nick Guest as he navigated British high-society and its homosexual underbelly: cruising in public parks, sneaking around and snorting coke with a married man. I annotated the book with a fine-tipped Sharpie, the pages thick enough that my markings never bled through. It feels invasive—a betrayal of my younger self's privacy—to leaf through the book more than ten years later and uncover what had meant something to me in my nascent queerness.
+
+He was gasping from the rush of reciprocity, the fact of being made love to. Nothing at the pub, in their aimless conversation, had even hinted at it. He'd never seen it described in a book. He was achingly ready and completely unprepared...
+
+When I got back home, to Aaron? I lay awake in the guest room at night, reading till odd hours and longing for him. The curve of his hip bone, the dimple on his lower back. I had a new past and an uncertain future, lines rippling out from a changed present. So few people knew that about me: my right hand and other closest friends; Aaron; and the googled image of Hollinghurst, smiling at me with his slicked-back hair.
+
+"Tell me about your book," Papa said to me at lunch on my first afternoon. He wore an all-white kurta pajama. He spoke slowly.
+
+"Oh," I said, glancing at its stately cover, a wrought-iron gate in the shape of lilting curlicues. "Britain in the 1980s. The main character just danced with Margaret Thatcher."
+
+"That sounds interesting," he said. "Maybe I'll read it after you finish."
+
+Before graduation, when my parents would have to meet Aaron for the first time, I came out to them, also by email. On our Skype follow-up, my mom told me she was worried about not having grandkids to take to Disney World, and my dad said he was worried about AIDS. I didn't harbor that fear, not yet. So when Nick ambiguously contracts HIV at the end of the novel, it was hard to feel latched to that history. Not when I was only having tentative sex with my hypochondriac prospective boyfriend. Not when I was in the ornate custody of Mau and Papa. I felt safe—no, reckless. Impatient, finally, to abandon straight lines for lines of beauty, and to follow them wherever they took me.`,
+    date: "2026-02-15",
+  },
+  {
+    id: 13,
+    title: "Natalie",
+    author: "Hannah Rubin",
+    content: `I would have punched you back then, if you'd have called it an affair. It wasn't anything lesbian like that. It just was—our tongues and cocks and legs glued together. We'd barely made it out of the car. Her velvet dress against my arm, I was glinting and in secret.
+
+But that was all back then, years and years ago. I don't even know Natalie anymore. I think she moved to Colorado at some point to be closer to her dad. It was a summer and then a fall of intensity, I think back on it like a favorite movie. Us tearing into one another and knowing nothing other than how we made ourselves glow.
+
+I met Natalie later that summer, at a sleepaway art camp. She made me fifteen mix CDs and I'm embarrassed to say that I didn't realize we were in love. We used to stay up until 2 a.m. watching movies on her laptop and listening to music in her bed. She taught me how to draw eight different kinds of bubble letters and I taught her how to stretch and pin her shirts into tube tops.
+
+One Saturday, we did a bunch of this guy's adderall together and walked out to a grassy area by a small pond. She spent hours working very fastidiously on a flower crown, I stared at the water while barely containing my intrusive thoughts. When I finally crawled back to my room, there were a few pieces of paper on my floor that had been pushed through the slat underneath my door: Natalie had written them all. Wondering if I was okay and telling me that she was here if I needed anything, really.
+
+The truth is that Natalie and I only ever hooked up one time. And it was quick, drunk. We were at a bar in New York, there were couches everywhere. It was a few months later. We kept taking shots and smiling at each other. All of our other friends slowly left. It was some kind of art camp reunion. She was wearing her hair down, curly. No makeup. I had blow dried my hair and was wearing a black mini skirt with a loose leopard printed tank top. I felt her fingers on my shoulder as she passed me my drink. We started talking about guys. I can't remember how it happened, that we went the long distance. Was it I who leaned towards her or her who leaned towards me? All I remember is that it felt funny.
+
+And then. Maybe I build up the whole fantasy: the fantasy of the summer and the fall and the intoxication of our bodies spilling out of cars and into fields, because of this. This one small decision big decision. Maybe it isn't a lie, what I said earlier about us, but a truth that exists somewhere else—like a different version of it. Maybe nothing is a lie in the multiverse.
+
+I didn't even reach over to give her a hug. I just smiled awkwardly, opened the door, and jumped out of the cab. Walked to the train station. Waited for the train. Rode the train home.
+
+I texted her the next morning to say I slept well and asked her how the rest of her night went. She took a while to write back. She said her night was great, she and Jane smoked a bowl and then passed out while watching The Office. I said we should really hang out again. It took her a full day to respond. She said yeah sure, sounds good.`,
+    date: "2026-02-15",
+  },
 ];
 
 export default stories;

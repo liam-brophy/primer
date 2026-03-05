@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 
-const StoryAccordionItem = ({ story, isOpen, onToggle }) => {
+const StoryAccordionItem = ({ story, isOpen, onToggle, volumeId }) => {
   const { theme } = useTheme();
 
   const getFirstSentence = (content) => {
@@ -20,9 +20,9 @@ const StoryAccordionItem = ({ story, isOpen, onToggle }) => {
       </div>
       {isOpen && (
         <div className="accordion-content">
-          <p className="story-meta">By {story.author}</p>
+          <p className={`story-meta volume-${volumeId}-text`}>By {story.author}</p>
           <p className="story-excerpt">{getFirstSentence(story.content)}</p>
-          <Link to={`/story/${story.id}`} className="read-more-link">Read Full Story</Link>
+          <Link to={`/story/${story.id}`} className={`read-more-link volume-${volumeId}-text`}>Read Full Story</Link>
         </div>
       )}
     </div>

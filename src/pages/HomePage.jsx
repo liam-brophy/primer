@@ -12,7 +12,7 @@ const HomePage = () => {
             <Hero />
             
             {/* Moving Banner */}
-            <div className="moving-banner">
+            {/* <div className="moving-banner">
                 <div className="banner-content">
                     <span>Volume II - February 2026</span>
                     <span>Volume II - February 2026</span>
@@ -21,7 +21,7 @@ const HomePage = () => {
                     <span>Volume II - February 2026</span>
                     <span>Volume II - February 2026</span>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };

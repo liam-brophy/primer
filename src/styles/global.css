@@ -889,6 +889,15 @@ body:not(.dark) .paragraph.center.calloutcenter {
   border-bottom-color: var(--color-text);
 }
 
+/* Volume-specific text colors for story meta and read-more link */
+.volume-I-text {
+  color: #1a3a52 !important; /* Dark blue for Volume I */
+}
+
+.volume-II-text {
+  color: #e8b4c8 !important; /* White/pink for Volume II */
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .accordion-container {

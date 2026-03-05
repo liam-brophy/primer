@@ -64,6 +64,7 @@ const VolumeSelector = ({ volumes = [], className = '' }) => {
                     story={story}
                     isOpen={openItemKey === `${v.id}-${story.id}`}
                     onToggle={() => toggleStory(v.id, story.id)}
+                    volumeId={v.id}
                   />
                 ))
               ) : (

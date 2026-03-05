@@ -23,13 +23,17 @@ const getFirstSentence = (content) => {
 /* Story accordion rendering is provided by the reusable component `StoryAccordionItem` in `src/components/StoryAccordionItem.jsx` */
 
 const LibraryPage = () => {
+    // Separate stories by volume (1-8 are Volume I, 9+ are Volume II)
+    const volumeIStories = stories.filter(story => story.id <= 8);
+    const volumeIIStories = stories.filter(story => story.id > 8);
+    
     return (
         <div className="library-container">
             <div className="library-title-container">
                 <VolumeSelector
                     volumes={[
-                        { id: 'I', label: 'Volume I', stories: stories },
-                        { id: 'II', label: 'Volume II', stories: [] }
+                        { id: 'I', label: 'Volume I', stories: volumeIStories },
+                        { id: 'II', label: 'Volume II', stories: volumeIIStories }
                     ]}
                 />
             </div>

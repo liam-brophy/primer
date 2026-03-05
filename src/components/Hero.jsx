@@ -14,7 +14,7 @@ const Hero = () => {
       <div className="hero-content">
         <div className="hero-image-container">
           <img 
-            src="/images/Primer_Transparent.png" 
+            src="/images/Primer_vII_Mockup.png" 
             alt="Primer Magazine" 
             className="hero-logo"
           />

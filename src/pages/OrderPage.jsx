@@ -22,7 +22,7 @@ const PRODUCTS = [
   {
     id: 'vol2',
     title: 'Volume II',
-    image: '/images/Primer_VolumeII.jpg',
+    image: '/images/PrimerCover_VOLUME2.jpg',
     description: 'Preorder now! Ships February 2026.',
     details: 'Arriving February 2026. Pre-order now!',
     price: 20,

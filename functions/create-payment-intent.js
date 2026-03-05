@@ -64,6 +64,11 @@ exports.handler = async (event, context) => {
     const shippingAmount = pricing.shippingAmount;
     const totalAmount = pricing.total;
 
+    // Build product information from cart items
+    const cartProducts = data.cart && data.cart.length > 0 
+      ? data.cart.map(item => `${item.quantity}x ${item.title}`).join(', ')
+      : 'Primer Magazine';
+
     // Create a payment intent with Stripe
     const paymentIntent = await stripe.paymentIntents.create({
       amount: totalAmount,
@@ -85,6 +90,7 @@ exports.handler = async (event, context) => {
         phone: data.phone || '',
         address: data.formattedAddress || 'In-store pickup',
         quantity: quantity.toString(),
+        products: cartProducts,
         isPickup: data.isPickup ? 'true' : 'false',
         notes: data.notes || '',
         shipping_amount: shippingAmount.toString(),
@@ -133,7 +139,7 @@ exports.handler = async (event, context) => {
     */
 
     // For now, log the order details and use a temporary order ID
-    console.log('Order details (MongoDB connection issue, not stored in DB):', {
+    console.log('Order details received from frontend:', {
       paymentIntentId: paymentIntent.id,
       customerInfo: {
         name: data.name,
@@ -142,6 +148,7 @@ exports.handler = async (event, context) => {
         address: data.formattedAddress || 'In-store pickup',
       },
       orderDetails: {
+        cart: data.cart,
         quantity: quantity,
         amount: amount,
         shipping: shippingAmount,
