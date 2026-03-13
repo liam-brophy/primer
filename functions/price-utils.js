@@ -5,7 +5,7 @@ function computeOrderAmounts(quantity, isPickup, discountCode) {
   const qty = parseInt(quantity, 10) || 1;
 
   // default unit price in cents
-  let unitPrice = 2399; // $23.99
+  let unitPrice = 2000; // $20.00
   let discountApplied = false;
 
   if (typeof discountCode === 'string' && discountCode.trim().toUpperCase() === VALID_DISCOUNT_CODE) {

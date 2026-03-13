@@ -22,7 +22,11 @@ const StoryAccordionItem = ({ story, isOpen, onToggle, volumeId }) => {
         <div className="accordion-content">
           <p className={`story-meta volume-${volumeId}-text`}>By {story.author}</p>
           <p className="story-excerpt">{getFirstSentence(story.content)}</p>
-          <Link to={`/story/${story.id}`} className={`read-more-link volume-${volumeId}-text`}>Read Full Story</Link>
+          {!story.noLink && (
+            <Link to={`/story/${story.id}`} className={`read-more-link volume-${volumeId}-text`}>
+              {volumeId === 'II' ? 'Read story snippet' : 'Read Full Story'}
+            </Link>
+          )}
         </div>
       )}
     </div>
