@@ -223,13 +223,10 @@ ${formData.country === 'US' ? 'United States' : formData.country === 'CA' ? 'Can
       if (prev[id]) {
         const newState = { ...prev };
         delete newState[id];
-        console.log('Closing', id, '→ expanded state:', newState);
         return newState;
       }
       // Otherwise, close all others and open only this one
-      const newState = { [id]: true };
-      console.log('Opening', id, '→ expanded state:', newState);
-      return newState;
+      return { [id]: true };
     });
   };
 
@@ -243,9 +240,7 @@ ${formData.country === 'US' ? 'United States' : formData.country === 'CA' ? 'Can
             <div className="product-tile" key={p.id} data-expanded={isExpanded} data-id={p.id}>
               <h2 className="product-title">{p.title}</h2>
               <img src={p.image} alt={p.title} className="product-image" />
-              {isExpanded && (
-                <p className="product-details">{p.details}</p>
-              )}
+              <p className="product-details" data-visible={isExpanded}>{p.details}</p>
               <div className="product-controls">
                 <button
                   className="details-arrow"

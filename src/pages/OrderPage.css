@@ -109,6 +109,19 @@ body.dark .product-tile {
   transition: color 0.3s ease;
   line-height: 1.4;
   word-wrap: break-word;
+  display: block;
+  box-sizing: border-box;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+}
+
+.product-details[data-visible="true"] {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .product-controls {
