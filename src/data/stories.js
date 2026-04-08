@@ -561,9 +561,25 @@ I texted the next morning saying I slept well, asked how her night went. She too
     id: 14,
     title: "Just Shell",
     author: "Nia Watson",
-    content: `Coming soon.`,
+    content: `At sundown, Maryland tastes salty-sweet. 
+
+I found myself 170 miles away from New York City in Baltimore for work. I would be immersed in gynecological research and conversations about the modern manifestations of racism in the American medical system for a few days, but since I had not entered the salty-sweet city in a decade, it would be a disservice not to treat myself to a succulent bowl of steaming hot crab legs. The Crafty Crab restaurant was quiet on a Sunday night. I appreciated the peace—there was minimal small talk from the candid bartender—to eat my seafood boil and sip my sweet margarita in solitude. 
+
+I stared at one knuckle coated in Old Bay seasoning and garlic butter. Meat or just shell? I took a bite and frowned: shell. Nothing inside.
+
+Everything in Baltimore has Old Bay on it. I heard a woman say this, jokingly, before I saw it for myself. The orange-y red powder is everywhere. The spice was brought to Baltimore in 1939 by Gustav Brunn who was fleeing Nazi Germany. In America, in the same year, Margaret Sanger and the Birth Control Federation of America—Planned Parenthood today—introduced "The Negro Project." They made it seem like a good idea: entering low income, Black communities in the South and bringing birth control access and contraceptive education.
+Not exactly. The project was rooted in the Eugenics Movement and New Deal-era racism. What seemed like a positive campaign, one even endorsed by prominent Black figures at the time-- W. E. B. DuBois and Adam Clayton Powell Jr--, was actually all about controlling the Black population, getting rid of the Black population, through reproductive health. 
+
+Orange and red, sweet and spicy Old Bay powder covered a hard crab shell with nothing inside. How promising. How disappointing. 
+
+Three days after my solitary meal at the Crafty Crab, I found myself in DC for an even shorter period of time—one day. The Uber driver zoomed along I-295 and pointed out of the window towards the murky Potomac River separating Maryland and Virginia.
+
+"That's where the helicopter crashed," he said, interrupting the quiet and giving me a spontaneous guided tour. It had been exactly eight weeks since a military helicopter crashed into an airliner, killing 67 people.
+
+I felt a pressure in my chest. The water looked so still. There's a superstition about holding your breath when passing a cemetery, so I filled my lungs with air and continued staring out the window. A motionless body of water stared back. I thought about the Hudson River. Two major cities, two rivers. Both liquid cemeteries. One caresses the cheek of the nation's capital, while the other wraps like an exoskeleton around an island.
+
+I finally exhaled when I returned to New York, but the pressure in my chest didn't lift. When I got home,  I needed something tangible—something salty-sweet—to ground me. I rumaged my kitchen cabinets in search of a small yellow box with a red lid: Old Bay seasoning. It was already expired.`,
     date: "2026-03-12",
-    noLink: true,
   },
   {
     id: 15,

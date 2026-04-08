@@ -152,8 +152,8 @@ const AboutPage = () => {
         {
             id: 20,
             volume: 'II',
-            name: "Hailey Zein",
-            bio: "Hailey Zein is a Brooklyn-based contemporary artist whose paintings depict claustrophobic interiors that contemplate tense juxtapositions between surface appearance and internal experience."
+            name: "Halley Zein",
+            bio: "Halley Zein is a Brooklyn-based contemporary artist whose paintings depict claustrophobic interiors that contemplate tense juxtapositions between surface appearance and internal experience."
         },
         {
             id: 21,
