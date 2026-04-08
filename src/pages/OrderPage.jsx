@@ -223,10 +223,13 @@ ${formData.country === 'US' ? 'United States' : formData.country === 'CA' ? 'Can
       if (prev[id]) {
         const newState = { ...prev };
         delete newState[id];
+        console.log('Closing', id, '→ expanded state:', newState);
         return newState;
       }
       // Otherwise, close all others and open only this one
-      return { [id]: true };
+      const newState = { [id]: true };
+      console.log('Opening', id, '→ expanded state:', newState);
+      return newState;
     });
   };
 
@@ -234,11 +237,13 @@ ${formData.country === 'US' ? 'United States' : formData.country === 'CA' ? 'Can
     <main className={`main-content container ${theme}`}>
       <div className="order-page">
         <div className="products">
-          {PRODUCTS.map((p) => (
-            <div className="product-tile" key={p.id}>
+          {PRODUCTS.map((p) => {
+            const isExpanded = !!expanded[p.id];
+            return (
+            <div className="product-tile" key={p.id} data-expanded={isExpanded} data-id={p.id}>
               <h2 className="product-title">{p.title}</h2>
               <img src={p.image} alt={p.title} className="product-image" />
-              {expanded[p.id] && (
+              {isExpanded && (
                 <p className="product-details">{p.details}</p>
               )}
               <div className="product-controls">
@@ -258,7 +263,8 @@ ${formData.country === 'US' ? 'United States' : formData.country === 'CA' ? 'Can
                 </button>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
 
         <aside className="cart-sidebar">
