@@ -20,7 +20,7 @@
   width: 280px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -38,6 +38,7 @@ body.dark .product-tile {
   font-size: 2rem;
   color: var(--color-text);
   transition: color 0.3s ease;
+  align-self: center;
 }
 
 .product-image {
@@ -103,7 +104,11 @@ body.dark .product-tile {
   font-size: 0.92rem;
   color: var(--muted);
   margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  width: 100%;
   transition: color 0.3s ease;
+  line-height: 1.4;
+  word-wrap: break-word;
 }
 
 .product-controls {
