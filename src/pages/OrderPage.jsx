@@ -218,16 +218,7 @@ ${formData.country === 'US' ? 'United States' : formData.country === 'CA' ? 'Can
   };
 
   const toggleDetails = (id) => {
-    setExpanded((prev) => {
-      // If clicking the same product that's already expanded, close it
-      if (prev[id]) {
-        const newState = { ...prev };
-        delete newState[id];
-        return newState;
-      }
-      // Otherwise, close all others and open only this one
-      return { [id]: true };
-    });
+    setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
   return (
