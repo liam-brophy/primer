@@ -23,10 +23,10 @@ const PRODUCTS = [
     id: 'vol2',
     title: 'Volume II',
     image: '/images/PrimerCover_VOLUME2.jpg',
-    description: 'Preorder now! Ships February 2026.',
-    details: 'Arriving February 2026. Pre-order now!',
+    description: 'Now available.',
+    details: 'Introduced by Anthony Roth Costanzo.\n\nWriting by John Paul Brammer, Corley Miller, Keegan Smith-Nichols, Kurt David, Hannah Rubin, Nia Watson, and Alex Bechtel.\n\nFeaturing art from Shawn Huckins, Halley Zein, and D\'Shon McCarthy.',
     price: 20,
-    button: 'Preorder'
+    button: 'Order'
   }
 ];
 
