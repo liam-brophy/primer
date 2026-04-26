@@ -141,7 +141,7 @@ const AboutPage = () => {
             id: 18,
             volume: 'II',
             name: "Nia Watson",
-            bio: "Nia Watson is a writer and MFA student at NYU."
+            bio: "Nia Watson is a writer based in NYC whose essays, poems and articles span culture, community, food and wellness. Her writing often explores reproductive health and race, examining—in literary form—what it truly means to \"heal\" the body and spirit."
         },
         {
             id: 19,
